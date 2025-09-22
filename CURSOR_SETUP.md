@@ -6,7 +6,7 @@ This guide will help you integrate the high-performance Rust-based Meal Prep MCP
 
 The Rust MCP server has been built and tested:
 - ✅ Server compiles successfully with Rust
-- ✅ All 6 cuisines (French, Thai, Italian, Mexican, Chinese, Vietnamese) are available
+- ✅ All 7 cuisines (French, Thai, Italian, Mexican, Chinese, Vietnamese, Japanese) are available
 - ✅ Recipe formatting and meal planning working properly
 - ✅ High-performance binary ready for production use
 
@@ -66,6 +66,7 @@ Access traditional recipes by cuisine using these resource URIs:
 - `file://recipes/Mexican` - Mexican cuisine recipes
 - `file://recipes/Chinese` - Chinese cuisine recipes
 - `file://recipes/Vietnamese` - Vietnamese cuisine recipes
+- `file://recipes/Japanese` - Japanese cuisine recipes
 
 ## 🧪 Testing the Integration
 

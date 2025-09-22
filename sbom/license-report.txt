@@ -24,4 +24,4 @@ error[unexpected-keys]: found 1 unexpected keys, expected: ["version", "private"
 33 │ unknown = "deny"
    │ ───────
 
-2025-09-22 04:35:28 [ERROR] failed to deserialize config from '/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep/deny.toml'
+2025-09-22 04:51:23 [ERROR] failed to deserialize config from '/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep/deny.toml'

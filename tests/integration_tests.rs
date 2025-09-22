@@ -4,13 +4,14 @@ use mcp_server_meal_prep::recipes::{format_recipes_as_markdown, get_available_cu
 #[tokio::test]
 async fn test_available_cuisines() {
     let cuisines = get_available_cuisines();
-    assert_eq!(cuisines.len(), 6);
+    assert_eq!(cuisines.len(), 7);
     assert!(cuisines.contains(&"French".to_string()));
     assert!(cuisines.contains(&"Thai".to_string()));
     assert!(cuisines.contains(&"Italian".to_string()));
     assert!(cuisines.contains(&"Mexican".to_string()));
     assert!(cuisines.contains(&"Chinese".to_string()));
     assert!(cuisines.contains(&"Vietnamese".to_string()));
+    assert!(cuisines.contains(&"Japanese".to_string()));
 }
 
 #[tokio::test]
@@ -46,7 +47,7 @@ async fn test_chinese_recipes() {
     let chinese_recipes = format_recipes_as_markdown("Chinese");
     assert!(chinese_recipes.contains("# Chinese Recipes"));
     assert!(chinese_recipes.contains("Kung Pao Chicken"));
-    assert!(chinese_recipes.contains("Char Siu (Chinese BBQ Pork)"));
+    assert!(chinese_recipes.contains("Char Siu (叉烧) - Chinese BBQ Pork"));
     assert!(chinese_recipes.contains("Egg Tarts (Dan Tat)"));
 }
 

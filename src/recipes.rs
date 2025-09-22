@@ -31,7 +31,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
         "French".to_string(),
         CuisineRecipes::new(vec![
             Recipe {
-                name: "Coq au Vin".to_string(),
+                name: "🍷 Coq au Vin".to_string(),
                 recipe_type: "Main Course".to_string(),
                 ingredients: vec![
                     "1 whole chicken, cut into pieces".to_string(),
@@ -59,7 +59,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "French Onion Soup".to_string(),
+                name: "🧅 French Onion Soup".to_string(),
                 recipe_type: "Appetizer".to_string(),
                 ingredients: vec![
                     "6 large onions, thinly sliced".to_string(),
@@ -84,7 +84,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "Crème Brûlée".to_string(),
+                name: "🍮 Crème Brûlée".to_string(),
                 recipe_type: "Dessert".to_string(),
                 ingredients: vec![
                     "2 cups heavy cream".to_string(),
@@ -112,7 +112,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
         "Thai".to_string(),
         CuisineRecipes::new(vec![
             Recipe {
-                name: "Pad Thai".to_string(),
+                name: "🍝 Pad Thai".to_string(),
                 recipe_type: "Main Course".to_string(),
                 ingredients: vec![
                     "8 oz rice noodles".to_string(),
@@ -144,7 +144,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "Tom Yum Goong".to_string(),
+                name: "🦐 Tom Yum Goong".to_string(),
                 recipe_type: "Appetizer".to_string(),
                 ingredients: vec![
                     "4 cups chicken or shrimp stock".to_string(),
@@ -172,7 +172,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "Mango Sticky Rice".to_string(),
+                name: "🥭 Mango Sticky Rice".to_string(),
                 recipe_type: "Dessert".to_string(),
                 ingredients: vec![
                     "1 cup glutinous rice".to_string(),
@@ -203,7 +203,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
         "Italian".to_string(),
         CuisineRecipes::new(vec![
             Recipe {
-                name: "Spaghetti Carbonara".to_string(),
+                name: "🍝 Spaghetti Carbonara".to_string(),
                 recipe_type: "Main Course".to_string(),
                 ingredients: vec![
                     "400g spaghetti".to_string(),
@@ -225,7 +225,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "Margherita Pizza".to_string(),
+                name: "🍕 Margherita Pizza".to_string(),
                 recipe_type: "Main Course".to_string(),
                 ingredients: vec![
                     "Pizza dough".to_string(),
@@ -246,7 +246,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "Tiramisu".to_string(),
+                name: "☕ Tiramisu".to_string(),
                 recipe_type: "Dessert".to_string(),
                 ingredients: vec![
                     "6 egg yolks".to_string(),
@@ -277,7 +277,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
         "Mexican".to_string(),
         CuisineRecipes::new(vec![
             Recipe {
-                name: "Tacos al Pastor".to_string(),
+                name: "🌮 Tacos al Pastor".to_string(),
                 recipe_type: "Main Course".to_string(),
                 ingredients: vec![
                     "2 lbs pork shoulder, sliced thin".to_string(),
@@ -304,7 +304,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "Guacamole".to_string(),
+                name: "🥑 Guacamole".to_string(),
                 recipe_type: "Appetizer".to_string(),
                 ingredients: vec![
                     "3 ripe avocados".to_string(),
@@ -328,7 +328,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "Churros".to_string(),
+                name: "🍩 Churros".to_string(),
                 recipe_type: "Dessert".to_string(),
                 ingredients: vec![
                     "1 cup water".to_string(),
@@ -359,88 +359,241 @@ pub fn get_recipe_database() -> RecipeDatabase {
         "Chinese".to_string(),
         CuisineRecipes::new(vec![
             Recipe {
-                name: "Kung Pao Chicken".to_string(),
+                name: "🥢 Kung Pao Chicken (宫保鸡丁)".to_string(),
                 recipe_type: "Main Course".to_string(),
                 ingredients: vec![
-                    "1 lb chicken breast, diced".to_string(),
-                    "2 tbsp soy sauce".to_string(),
-                    "1 tbsp rice wine".to_string(),
-                    "1 tsp cornstarch".to_string(),
-                    "2 tbsp vegetable oil".to_string(),
-                    "6-8 dried red chilies".to_string(),
-                    "1 tbsp Sichuan peppercorns".to_string(),
-                    "3 garlic cloves, minced".to_string(),
-                    "1 inch ginger, minced".to_string(),
-                    "1 bell pepper, diced".to_string(),
-                    "1/2 cup roasted peanuts".to_string(),
-                    "2 tbsp hoisin sauce".to_string(),
-                    "1 tbsp dark soy sauce".to_string(),
-                    "1 tsp sugar".to_string(),
-                    "2 green onions, chopped".to_string(),
+                    "1 lb chicken breast, diced (鸡胸肉)".to_string(),
+                    "2 tbsp soy sauce (生抽)".to_string(),
+                    "1 tbsp rice wine (料酒)".to_string(),
+                    "1 tsp cornstarch (生粉)".to_string(),
+                    "2 tbsp vegetable oil (植物油)".to_string(),
+                    "6-8 dried red chilies (干辣椒)".to_string(),
+                    "1 tbsp Sichuan peppercorns (花椒)".to_string(),
+                    "3 garlic cloves, minced (蒜蓉)".to_string(),
+                    "1 inch ginger, minced (姜蓉)".to_string(),
+                    "1 bell pepper, diced (甜椒)".to_string(),
+                    "1/2 cup roasted peanuts (花生米)".to_string(),
+                    "2 tbsp hoisin sauce (海鲜酱)".to_string(),
+                    "1 tbsp dark soy sauce (老抽)".to_string(),
+                    "1 tsp sugar (糖)".to_string(),
+                    "2 green onions, chopped (葱花)".to_string(),
                 ],
                 instructions: vec![
-                    "Marinate chicken with soy sauce, rice wine, and cornstarch for 15 minutes"
+                    "Prepare chicken using Cantonese 'velveting' technique: marinate diced chicken with soy sauce, rice wine, and cornstarch for 15 minutes (粤式上浆法：将鸡丁用生抽、料酒和生粉腌制15分钟)"
                         .to_string(),
-                    "Heat oil in wok over high heat".to_string(),
-                    "Add dried chilies and Sichuan peppercorns, stir-fry until fragrant"
+                    "Heat wok over high heat until smoking hot (wok hei technique) (大火烧热锅至冒烟，获得镬气)"
                         .to_string(),
-                    "Add chicken and stir-fry until cooked through".to_string(),
-                    "Add garlic, ginger, and bell pepper".to_string(),
-                    "Stir-fry for 2-3 minutes".to_string(),
-                    "Add peanuts and sauce mixture".to_string(),
-                    "Toss everything together and garnish with green onions".to_string(),
+                    "Add oil and swirl to coat wok surface completely (下油，转动锅子让油均匀覆盖锅面)"
+                        .to_string(),
+                    "Add dried chilies and Sichuan peppercorns, stir-fry until fragrant (about 30 seconds) (下干辣椒和花椒，爆香约30秒)"
+                        .to_string(),
+                    "Add chicken and stir-fry using 'chao' technique - quick tossing motions until 80% cooked (下鸡丁，用炒的手法快速翻炒至八成熟)"
+                        .to_string(),
+                    "Push ingredients to sides of wok, add garlic and ginger to center (将食材推到锅边，在中间下蒜蓉和姜蓉)"
+                        .to_string(),
+                    "Add bell pepper and continue stir-frying with rapid tossing motions (下甜椒，继续快速翻炒)"
+                        .to_string(),
+                    "Create sauce mixture: combine hoisin sauce, dark soy sauce, and sugar (调汁：混合海鲜酱、老抽和糖)"
+                        .to_string(),
+                    "Add sauce mixture and peanuts, toss everything together quickly (下汁和花生，快速翻炒均匀)"
+                        .to_string(),
+                    "Finish with green onions and serve immediately while hot (Cantonese tradition) (最后下葱花，趁热上桌 - 粤式传统)"
+                        .to_string(),
                 ],
             },
             Recipe {
-                name: "Char Siu (Chinese BBQ Pork)".to_string(),
+                name: "🥩 Char Siu (叉烧) - Chinese BBQ Pork".to_string(),
                 recipe_type: "Main Course".to_string(),
                 ingredients: vec![
-                    "2 lbs pork shoulder or tenderloin".to_string(),
-                    "3 tbsp hoisin sauce".to_string(),
-                    "2 tbsp soy sauce".to_string(),
-                    "2 tbsp honey".to_string(),
-                    "1 tbsp rice wine".to_string(),
-                    "1 tbsp five-spice powder".to_string(),
-                    "2 garlic cloves, minced".to_string(),
-                    "1 inch ginger, minced".to_string(),
-                    "1 tbsp red food coloring (optional)".to_string(),
-                    "2 tbsp vegetable oil".to_string(),
+                    "2 lbs pork shoulder or tenderloin (猪肉)".to_string(),
+                    "3 tbsp hoisin sauce (海鲜酱)".to_string(),
+                    "2 tbsp soy sauce (生抽)".to_string(),
+                    "2 tbsp honey (蜂蜜)".to_string(),
+                    "1 tbsp rice wine (料酒)".to_string(),
+                    "1 tbsp five-spice powder (五香粉)".to_string(),
+                    "2 garlic cloves, minced (蒜蓉)".to_string(),
+                    "1 inch ginger, minced (姜蓉)".to_string(),
+                    "1 tbsp red food coloring (optional) (红曲粉)".to_string(),
+                    "2 tbsp vegetable oil (植物油)".to_string(),
                 ],
                 instructions: vec![
-                    "Cut pork into long strips about 2 inches wide".to_string(),
-                    "Mix all marinade ingredients in a bowl".to_string(),
-                    "Coat pork strips with marinade and refrigerate overnight".to_string(),
-                    "Preheat oven to 400°F (200°C)".to_string(),
-                    "Place pork on wire rack over baking sheet".to_string(),
-                    "Roast for 20 minutes, then reduce heat to 350°F (175°C)".to_string(),
-                    "Continue roasting for 30-40 minutes, basting with marinade".to_string(),
-                    "Let rest 10 minutes before slicing".to_string(),
+                    "Cut pork into long strips about 2 inches wide (traditional Cantonese char siu shape) (将猪肉切成约2寸宽的长条 - 传统粤式叉烧形状)"
+                        .to_string(),
+                    "Prepare marinade using traditional Cantonese method: mix hoisin sauce, soy sauce, honey, rice wine, five-spice powder, garlic, and ginger (传统粤式腌料：混合海鲜酱、生抽、蜂蜜、料酒、五香粉、蒜蓉和姜蓉)"
+                        .to_string(),
+                    "Score pork strips lightly on both sides to help marinade penetrate (在猪肉条两面轻划几刀，让腌料入味)"
+                        .to_string(),
+                    "Coat pork strips thoroughly with marinade and refrigerate overnight (minimum 8 hours for authentic flavor) (将猪肉条充分裹上腌料，冷藏过夜 - 至少8小时以获得正宗风味)"
+                        .to_string(),
+                    "Preheat oven to 400°F (200°C) - high initial heat for Cantonese-style char siu (预热烤箱至400°F - 粤式叉烧需要高温开始)"
+                        .to_string(),
+                    "Place pork on wire rack over baking sheet to allow air circulation (将猪肉放在烤架上，下面放烤盘，让空气流通)"
+                        .to_string(),
+                    "Roast for 20 minutes to develop caramelized exterior, then reduce heat to 350°F (175°C) (烤20分钟形成焦糖外皮，然后降温至350°F)"
+                        .to_string(),
+                    "Continue roasting for 30-40 minutes, basting with marinade every 10 minutes (继续烤30-40分钟，每10分钟刷一次腌料)"
+                        .to_string(),
+                    "Final basting: brush with honey for authentic Cantonese glaze (最后刷蜂蜜，获得正宗粤式光泽)"
+                        .to_string(),
+                    "Let rest 10 minutes before slicing against the grain (Cantonese tradition) (静置10分钟后逆纹切片 - 粤式传统)"
+                        .to_string(),
                 ],
             },
             Recipe {
-                name: "Egg Tarts (Dan Tat)".to_string(),
+                name: "🥧 Egg Tarts (蛋挞)".to_string(),
                 recipe_type: "Dessert".to_string(),
                 ingredients: vec![
-                    "1 cup all-purpose flour".to_string(),
-                    "1/2 cup butter, cold and cubed".to_string(),
-                    "1/4 cup ice water".to_string(),
-                    "1/2 tsp salt".to_string(),
-                    "4 large eggs".to_string(),
-                    "1/2 cup sugar".to_string(),
-                    "1 1/2 cups milk".to_string(),
-                    "1 tsp vanilla extract".to_string(),
+                    "1 cup all-purpose flour (面粉)".to_string(),
+                    "1/2 cup butter, cold and cubed (黄油)".to_string(),
+                    "1/4 cup ice water (冰水)".to_string(),
+                    "1/2 tsp salt (盐)".to_string(),
+                    "4 large eggs (鸡蛋)".to_string(),
+                    "1/2 cup sugar (糖)".to_string(),
+                    "1 1/2 cups milk (牛奶)".to_string(),
+                    "1 tsp vanilla extract (香草精)".to_string(),
                 ],
                 instructions: vec![
-                    "Make pastry: mix flour and salt, cut in butter until crumbly".to_string(),
-                    "Add ice water gradually until dough forms".to_string(),
-                    "Chill dough for 30 minutes".to_string(),
-                    "Roll out and cut into circles for tart shells".to_string(),
-                    "Preheat oven to 400°F (200°C)".to_string(),
-                    "Make custard: whisk eggs, sugar, milk, and vanilla".to_string(),
-                    "Strain custard mixture".to_string(),
-                    "Fill tart shells with custard".to_string(),
-                    "Bake for 15-20 minutes until custard is set".to_string(),
-                    "Cool before serving".to_string(),
+                    "Make pastry using Cantonese 'laminated' technique: mix flour and salt, cut in cold butter until crumbly (粤式酥皮法：混合面粉和盐，切入冷黄油至碎屑状)"
+                        .to_string(),
+                    "Add ice water gradually until dough just comes together (don't overwork - Cantonese pastry principle) (逐渐加入冰水至面团刚好成团 - 不要过度揉搓，粤式酥皮原则)"
+                        .to_string(),
+                    "Chill dough for 30 minutes to relax gluten (essential for flaky Cantonese pastry) (冷藏面团30分钟松弛面筋 - 粤式酥皮的关键)"
+                        .to_string(),
+                    "Roll out dough to 1/8 inch thickness and cut into circles for tart shells (将面团擀至1/8寸厚，切成圆形做蛋挞皮)"
+                        .to_string(),
+                    "Preheat oven to 400°F (200°C) - high heat for authentic Cantonese egg tarts (预热烤箱至400°F - 正宗粤式蛋挞需要高温)"
+                        .to_string(),
+                    "Make custard using traditional Cantonese method: whisk eggs gently with sugar until dissolved (传统粤式蛋液：轻柔搅拌鸡蛋和糖至溶解)"
+                        .to_string(),
+                    "Add warm milk gradually while whisking (prevents curdling - Cantonese technique) (边搅拌边逐渐加入温牛奶 - 防止结块，粤式技巧)"
+                        .to_string(),
+                    "Strain custard mixture through fine sieve for silky smooth texture (用细筛过滤蛋液，获得丝滑质地)"
+                        .to_string(),
+                    "Fill tart shells 3/4 full with custard (Cantonese tradition) (将蛋液倒入挞皮至3/4满 - 粤式传统)"
+                        .to_string(),
+                    "Bake for 15-20 minutes until custard is set but still slightly jiggly in center (烤15-20分钟至蛋液凝固但中心仍轻微晃动)"
+                        .to_string(),
+                    "Cool on wire rack before serving (allows pastry to crisp properly) (在网架上冷却后上桌 - 让酥皮更脆)"
+                        .to_string(),
+                ],
+            },
+            Recipe {
+                name: "🍜 Beef Noodle Soup (台湾牛肉面)".to_string(),
+                recipe_type: "Main Course".to_string(),
+                ingredients: vec![
+                    "2 lbs beef shank or brisket, cut into chunks (牛肉)".to_string(),
+                    "1 lb fresh wheat noodles (面条)".to_string(),
+                    "4 cups beef broth (牛肉汤)".to_string(),
+                    "2 cups water (水)".to_string(),
+                    "3 tbsp soy sauce (生抽)".to_string(),
+                    "2 tbsp dark soy sauce (老抽)".to_string(),
+                    "2 tbsp rice wine (料酒)".to_string(),
+                    "1 tbsp sugar (糖)".to_string(),
+                    "1 tbsp doubanjiang (fermented bean paste) (豆瓣酱)".to_string(),
+                    "1 large onion, quartered (洋葱)".to_string(),
+                    "4 garlic cloves, smashed (蒜瓣)".to_string(),
+                    "2-inch piece ginger, sliced (姜片)".to_string(),
+                    "2 star anise (八角)".to_string(),
+                    "1 cinnamon stick (桂皮)".to_string(),
+                    "1 tsp Sichuan peppercorns (花椒)".to_string(),
+                    "2 green onions, cut into 2-inch pieces (葱段)".to_string(),
+                    "1 bunch bok choy or Chinese cabbage (白菜)".to_string(),
+                    "Pickled mustard greens for garnish (酸菜)".to_string(),
+                    "Cilantro for garnish (香菜)".to_string(),
+                ],
+                instructions: vec![
+                    "Blanch beef chunks in boiling water for 5 minutes using Cantonese 'chui' technique, then rinse thoroughly (用粤式焯水法将牛肉块焯水5分钟，然后彻底冲洗)"
+                        .to_string(),
+                    "Heat oil in large pot over medium-high heat, add onion, garlic, and ginger (在大锅中火加热油，下洋葱、蒜和姜)"
+                        .to_string(),
+                    "Add doubanjiang and stir-fry until fragrant (about 1 minute - Cantonese 'bao' technique) (下豆瓣酱爆香约1分钟 - 粤式爆香法)"
+                        .to_string(),
+                    "Add beef chunks and brown on all sides using 'chao' technique (下牛肉块，用炒的手法四面煎至金黄)"
+                        .to_string(),
+                    "Add soy sauces, rice wine, sugar, and spices, stir to combine (下生抽、老抽、料酒、糖和香料，翻炒均匀)"
+                        .to_string(),
+                    "Pour in broth and water, bring to rolling boil then reduce to gentle simmer (倒入高汤和水，大火煮开后转小火慢炖)"
+                        .to_string(),
+                    "Simmer for 2-3 hours until beef is fork-tender (Cantonese slow-cooking tradition) (慢炖2-3小时至牛肉软烂 - 粤式慢炖传统)"
+                        .to_string(),
+                    "Cook noodles according to package directions, rinse under cold water to stop cooking (按包装说明煮面条，用冷水冲洗停止烹饪)"
+                        .to_string(),
+                    "Blanch bok choy in the soup for 30 seconds (Cantonese 'chui' technique for vegetables) (在汤中焯小白菜30秒 - 粤式蔬菜焯水法)"
+                        .to_string(),
+                    "Serve noodles in bowls with beef and hot broth (将面条盛入碗中，加入牛肉和热汤)"
+                        .to_string(),
+                    "Garnish with pickled mustard greens and cilantro (traditional Cantonese finishing touch) (用酸菜和香菜装饰 - 传统粤式收尾)"
+                        .to_string(),
+                ],
+            },
+            Recipe {
+                name: "🧋 Bubble Tea (珍珠奶茶)".to_string(),
+                recipe_type: "Beverage".to_string(),
+                ingredients: vec![
+                    "1/2 cup tapioca pearls (boba) (珍珠)".to_string(),
+                    "2 cups water (水)".to_string(),
+                    "1/4 cup brown sugar (红糖)".to_string(),
+                    "2 cups strong black tea, chilled (红茶)".to_string(),
+                    "1/2 cup milk or non-dairy milk (牛奶)".to_string(),
+                    "2 tbsp simple syrup (糖浆)".to_string(),
+                    "Ice cubes (冰块)".to_string(),
+                ],
+                instructions: vec![
+                    "Cook tapioca pearls in boiling water for 15-20 minutes".to_string(),
+                    "Drain and rinse pearls under cold water".to_string(),
+                    "Make brown sugar syrup by heating brown sugar with 2 tbsp water".to_string(),
+                    "Add cooked pearls to syrup and let soak for 10 minutes".to_string(),
+                    "Brew strong black tea and chill completely".to_string(),
+                    "Add simple syrup to taste".to_string(),
+                    "Fill glass with ice cubes".to_string(),
+                    "Add brown sugar pearls to bottom of glass".to_string(),
+                    "Pour tea over ice, leaving room for milk".to_string(),
+                    "Add milk and stir gently".to_string(),
+                    "Serve with wide straw for drinking pearls".to_string(),
+                ],
+            },
+            Recipe {
+                name: "🦪 Oyster Omelette (蚵仔煎)".to_string(),
+                recipe_type: "Main Course".to_string(),
+                ingredients: vec![
+                    "1 cup fresh oysters, cleaned (生蚝)".to_string(),
+                    "4 large eggs (鸡蛋)".to_string(),
+                    "1/2 cup sweet potato starch (地瓜粉)".to_string(),
+                    "1/4 cup water (水)".to_string(),
+                    "2 tbsp vegetable oil (植物油)".to_string(),
+                    "2 cloves garlic, minced (蒜蓉)".to_string(),
+                    "1/2 cup bean sprouts (豆芽)".to_string(),
+                    "2 green onions, chopped (葱花)".to_string(),
+                    "1 tbsp soy sauce (生抽)".to_string(),
+                    "1 tsp sesame oil (香油)".to_string(),
+                    "Cilantro for garnish (香菜)".to_string(),
+                    "Sweet chili sauce for serving (甜辣酱)".to_string(),
+                ],
+                instructions: vec![
+                    "Mix sweet potato starch with water to make smooth batter (Cantonese 'ho' technique for even consistency) (用粤式和浆法将地瓜粉和水调成光滑面糊)"
+                        .to_string(),
+                    "Heat oil in large non-stick pan over medium-high heat until shimmering (在大不粘锅中火加热油至油面发亮)"
+                        .to_string(),
+                    "Add garlic and stir-fry until fragrant using 'bao' technique (about 30 seconds) (下蒜蓉用爆香法炒至香 - 约30秒)"
+                        .to_string(),
+                    "Add oysters and cook for 1 minute, stirring gently to avoid breaking (下生蚝煮1分钟，轻柔搅拌避免弄破)"
+                        .to_string(),
+                    "Pour batter over oysters and spread evenly using circular motions (将面糊倒在生蚝上，用圆形动作摊匀)"
+                        .to_string(),
+                    "Beat eggs lightly and pour over the batter in a spiral pattern (轻轻打散鸡蛋，以螺旋状倒在面糊上)"
+                        .to_string(),
+                    "Add bean sprouts and green onions, distributing evenly (下豆芽和葱花，均匀分布)"
+                        .to_string(),
+                    "Cook until bottom is golden and crispy (about 3-4 minutes) (煎至底部金黄酥脆 - 约3-4分钟)"
+                        .to_string(),
+                    "Flip carefully using two spatulas (Cantonese 'fan' technique) (用两把铲子小心翻面 - 粤式翻面法)"
+                        .to_string(),
+                    "Cook other side until golden and crispy (煎另一面至金黄酥脆)"
+                        .to_string(),
+                    "Drizzle with soy sauce and sesame oil in final moments (最后淋上生抽和香油)"
+                        .to_string(),
+                    "Garnish with cilantro and serve immediately with sweet chili sauce (用香菜装饰，立即配甜辣酱上桌)"
+                        .to_string(),
                 ],
             },
         ]),
@@ -451,7 +604,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
         "Vietnamese".to_string(),
         CuisineRecipes::new(vec![
             Recipe {
-                name: "Pho Bo (Beef Noodle Soup)".to_string(),
+                name: "🍲 Pho Bo (Beef Noodle Soup)".to_string(),
                 recipe_type: "Main Course".to_string(),
                 ingredients: vec![
                     "2 lbs beef bones".to_string(),
@@ -490,7 +643,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "Banh Mi".to_string(),
+                name: "🥖 Banh Mi".to_string(),
                 recipe_type: "Main Course".to_string(),
                 ingredients: vec![
                     "1 baguette or Vietnamese bread".to_string(),
@@ -522,7 +675,7 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 ],
             },
             Recipe {
-                name: "Che Ba Mau (Three Color Dessert)".to_string(),
+                name: "🍧 Che Ba Mau (Three Color Dessert)".to_string(),
                 recipe_type: "Dessert".to_string(),
                 ingredients: vec![
                     "1/2 cup mung beans".to_string(),
@@ -548,6 +701,93 @@ pub fn get_recipe_database() -> RecipeDatabase {
                     "Pour coconut milk over everything".to_string(),
                     "Drizzle with coconut cream".to_string(),
                     "Serve chilled".to_string(),
+                ],
+            },
+        ]),
+    );
+
+    // Japanese Cuisine
+    database.insert(
+        "Japanese".to_string(),
+        CuisineRecipes::new(vec![
+            Recipe {
+                name: "🍱 Unagi Donburi (Eel over Rice)".to_string(),
+                recipe_type: "Main Course".to_string(),
+                ingredients: vec![
+                    "2 pieces fresh eel fillets (unagi)".to_string(),
+                    "2 cups Japanese short-grain rice".to_string(),
+                    "1/4 cup mirin (sweet rice wine)".to_string(),
+                    "1/4 cup soy sauce".to_string(),
+                    "2 tbsp sugar".to_string(),
+                    "1 tbsp sake".to_string(),
+                    "2 tbsp vegetable oil".to_string(),
+                    "2 green onions, thinly sliced".to_string(),
+                    "1 tsp sesame seeds".to_string(),
+                    "Pickled ginger (gari) for garnish".to_string(),
+                    "Nori (seaweed) strips for garnish".to_string(),
+                ],
+                instructions: vec![
+                    "Cook Japanese rice according to package directions".to_string(),
+                    "Prepare eel sauce by combining mirin, soy sauce, sugar, and sake".to_string(),
+                    "Heat sauce in small saucepan until sugar dissolves".to_string(),
+                    "Heat oil in large skillet over medium-high heat".to_string(),
+                    "Place eel fillets skin-side down and cook for 3-4 minutes".to_string(),
+                    "Flip eel and brush with sauce, cook for another 2-3 minutes".to_string(),
+                    "Brush eel with more sauce and cook until glazed".to_string(),
+                    "Slice eel into bite-sized pieces".to_string(),
+                    "Place hot rice in bowls".to_string(),
+                    "Arrange eel pieces on top of rice".to_string(),
+                    "Drizzle with remaining sauce".to_string(),
+                    "Garnish with green onions, sesame seeds, pickled ginger, and nori".to_string(),
+                ],
+            },
+            Recipe {
+                name: "🍲 Miso Soup".to_string(),
+                recipe_type: "Appetizer".to_string(),
+                ingredients: vec![
+                    "4 cups dashi (Japanese stock)".to_string(),
+                    "3 tbsp white miso paste".to_string(),
+                    "1/2 block silken tofu, cubed".to_string(),
+                    "2 green onions, thinly sliced".to_string(),
+                    "1 sheet nori, cut into strips".to_string(),
+                    "1 tsp wakame seaweed (optional)".to_string(),
+                ],
+                instructions: vec![
+                    "Heat dashi in a saucepan over medium heat".to_string(),
+                    "Add wakame seaweed if using and let it rehydrate".to_string(),
+                    "Place miso paste in a small bowl".to_string(),
+                    "Add a ladle of hot dashi to the miso and whisk until smooth".to_string(),
+                    "Add miso mixture back to the saucepan".to_string(),
+                    "Add tofu cubes and heat gently (do not boil)".to_string(),
+                    "Ladle soup into bowls".to_string(),
+                    "Garnish with green onions and nori strips".to_string(),
+                    "Serve immediately".to_string(),
+                ],
+            },
+            Recipe {
+                name: "🍵 Matcha Ice Cream".to_string(),
+                recipe_type: "Dessert".to_string(),
+                ingredients: vec![
+                    "2 cups heavy cream".to_string(),
+                    "1 cup whole milk".to_string(),
+                    "3/4 cup sugar".to_string(),
+                    "4 egg yolks".to_string(),
+                    "2 tbsp matcha powder".to_string(),
+                    "1 tsp vanilla extract".to_string(),
+                    "Pinch of salt".to_string(),
+                ],
+                instructions: vec![
+                    "Heat cream and milk in saucepan until steaming".to_string(),
+                    "Whisk egg yolks with sugar until pale and thick".to_string(),
+                    "Sift matcha powder to remove lumps".to_string(),
+                    "Gradually add hot cream mixture to egg yolks, whisking constantly".to_string(),
+                    "Return mixture to saucepan and cook over low heat until thickened".to_string(),
+                    "Strain custard through fine mesh sieve".to_string(),
+                    "Whisk in matcha powder, vanilla, and salt".to_string(),
+                    "Chill custard completely in refrigerator".to_string(),
+                    "Churn in ice cream maker according to manufacturer's instructions".to_string(),
+                    "Freeze until firm, at least 4 hours".to_string(),
+                    "Serve with additional matcha powder dusted on top".to_string(),
                 ],
             },
         ]),

@@ -1,10 +1,12 @@
 # MCP Server - Meal Prep (Rust)
 
+[English](README.md) | [中文](README_CN.md)
+
 A high-performance MCP (Model Context Protocol) server built in Rust for meal preparation, featuring cuisine-based recipes and intelligent meal planning capabilities.
 
 ## 🚀 Features
 
-- **Multi-Cuisine Recipe Database**: Traditional recipes from French, Thai, Italian, Mexican, Chinese, and Vietnamese cuisines
+- **Multi-Cuisine Recipe Database**: Traditional recipes from French, Thai, Italian, Mexican, Chinese, Vietnamese, and Japanese cuisines
 - **Intelligent Meal Planning**: Generate weekly meal plans with optimized shopping lists
 - **Ingredient Overlap Analysis**: Minimize food waste by identifying common ingredients
 - **Resource Templates**: Dynamic recipe access via `file://recipes/{cuisine}` URIs
@@ -219,6 +221,11 @@ Add to your MCP client configuration:
 - **Pho Bo (Beef Noodle Soup)**: Traditional Vietnamese noodle soup
 - **Banh Mi**: Vietnamese sandwich with pickled vegetables
 - **Che Ba Mau (Three Color Dessert)**: Layered dessert with beans and coconut
+
+### Japanese Cuisine
+- **Unagi Donburi (Eel over Rice)**: Grilled eel with sweet sauce over rice
+- **Miso Soup**: Traditional Japanese soup with fermented soybean paste
+- **Matcha Ice Cream**: Green tea flavored ice cream dessert
 
 ## 🧪 Testing
 
