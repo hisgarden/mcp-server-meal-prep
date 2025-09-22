@@ -634,37 +634,46 @@ pub fn get_recipe_database() -> RecipeDatabase {
                 name: "🍞 Hong Kong French Toast (港式西多士)".to_string(),
                 recipe_type: "Dessert".to_string(),
                 ingredients: vec![
-                    "4 slices thick white bread (厚白麵包)".to_string(),
-                    "2 tbsp smooth peanut butter (花生醬)".to_string(),
-                    "2 tbsp condensed milk (煉奶)".to_string(),
+                    "4 thick slices milk bread, 1-1.5 inches thick (厚牛奶麵包)".to_string(),
+                    "2-3 tbsp smooth peanut butter (花生醬)".to_string(),
+                    "1-2 tbsp kaya jam (optional) (咖椰醬)".to_string(),
                     "2 large eggs (雞蛋)".to_string(),
-                    "1/4 cup milk (牛奶)".to_string(),
-                    "1 tbsp sugar (糖)".to_string(),
-                    "1/2 tsp vanilla extract (香草精)".to_string(),
-                    "4 tbsp butter (牛油)".to_string(),
-                    "Maple syrup for serving (楓糖漿)".to_string(),
-                    "Powdered sugar for dusting (糖粉)".to_string(),
+                    "2-3 tbsp evaporated milk (淡奶)".to_string(),
+                    "Pinch of salt (鹽)".to_string(),
+                    "300ml cooking oil for deep frying (炸油)".to_string(),
+                    "2 tbsp butter, cut into small pats (牛油)".to_string(),
+                    "2-4 tbsp sweetened condensed milk (煉奶)".to_string(),
+                    "2 tbsp golden syrup or maple syrup (金糖漿或楓糖漿)".to_string(),
+                    "Honey for serving (optional) (蜂蜜)".to_string(),
                 ],
                 instructions: vec![
-                    "Trim crusts from bread slices (traditional Hong Kong style) (切去麵包邊 - 傳統港式做法)"
+                    "Trim crusts from thick milk bread slices (authentic Hong Kong tea restaurant style - 茶餐廳做法) (切去厚牛奶麵包邊 - 正宗港式茶餐廳做法)"
                         .to_string(),
-                    "Spread peanut butter on two slices, condensed milk on the other two (兩片塗花生醬，兩片塗煉奶)"
+                    "Spread smooth peanut butter on two slices, kaya jam on the other two (if using) (兩片塗花生醬，兩片塗咖椰醬 - 如使用)"
                         .to_string(),
-                    "Sandwich slices together with fillings inside (將麵包片夾在一起，餡料在內)"
+                    "Sandwich slices together with fillings inside, pressing gently to seal edges (將麵包片夾在一起，餡料在內，輕壓封邊)"
                         .to_string(),
-                    "Beat eggs with milk, sugar, and vanilla extract in shallow dish (在淺盤中打散雞蛋，加入牛奶、糖和香草精)"
+                    "Beat eggs with evaporated milk and pinch of salt in shallow dish (traditional Hong Kong method) (在淺盤中打散雞蛋，加入淡奶和鹽 - 傳統港式方法)"
                         .to_string(),
-                    "Heat butter in large pan over medium heat (在中火的大平底鍋中加熱牛油)"
+                    "Heat cooking oil in deep pan or wok to 350°F (175°C) for deep frying (在深鍋或鑊中加熱炸油至175°C)"
                         .to_string(),
-                    "Dip each sandwich in egg mixture, coating both sides thoroughly (將每個三明治浸入蛋液中，兩面都要充分沾滿)"
+                    "Dip each sandwich in egg mixture, coating both sides thoroughly and letting excess drip off (將每個三明治浸入蛋液中，兩面充分沾滿，讓多餘蛋液滴掉)"
                         .to_string(),
-                    "Let excess egg mixture drip off before cooking (下鍋前讓多餘蛋液滴掉)"
+                    "Carefully lower sandwiches into hot oil using tongs (authentic deep-frying technique) (用夾子小心將三明治放入熱油中 - 正宗炸製技巧)"
                         .to_string(),
-                    "Fry sandwiches in hot butter until golden brown on both sides (about 2-3 minutes per side) (在熱牛油中煎至兩面金黃 - 每面約2-3分鐘)"
+                    "Fry for 2-3 minutes until golden brown and crispy on both sides (炸2-3分鐘至兩面金黃酥脆)"
                         .to_string(),
-                    "Drain on paper towels to remove excess oil (放在廚房紙上吸去多餘油分)"
+                    "Remove from oil and drain on paper towels to remove excess oil (從油中取出，放在廚房紙上吸去多餘油分)"
                         .to_string(),
-                    "Cut diagonally and serve hot with maple syrup and powdered sugar (對角切開，趁熱配楓糖漿和糖粉享用)"
+                    "Cut diagonally into triangles (traditional Hong Kong presentation) (對角切成三角形 - 傳統港式擺盤)"
+                        .to_string(),
+                    "Top with butter pats while still hot (butter melts into the crispy exterior) (趁熱放上牛油塊 - 牛油會融化到酥脆外層)"
+                        .to_string(),
+                    "Drizzle generously with sweetened condensed milk and golden syrup (大量淋上煉奶和金糖漿)"
+                        .to_string(),
+                    "Serve immediately while hot and crispy (essential for authentic texture) (趁熱酥脆立即享用 - 正宗口感關鍵)"
+                        .to_string(),
+                    "Optional: Add honey or additional syrup for extra sweetness (可選：加蜂蜜或額外糖漿增加甜味)"
                         .to_string(),
                 ],
             },
