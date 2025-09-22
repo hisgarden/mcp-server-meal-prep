@@ -1,7 +1,7 @@
 Software Bill of Materials (SBOM) Summary
 =========================================
 
-Generated: 2025-09-22 04:51:25 UTC
+Generated: 2025-09-22 05:15:07 UTC
 Project: MCP Server - Meal Prep (Rust)
 Version: 1.0.0
 Author: Jin Wen <jin.wen@hisgarden.org>
@@ -34,5 +34,5 @@ Files Generated:
 - sbom/sbom-summary.txt (Human-readable summary)
 
 Binary Information:
-- Size: 1.6M
-- SHA256: 12e9564a4e797a4ad8cea007db58638fc63213a998008a4f1eb4b374ff42590c
+- Size: 1.7M
+- SHA256: 2efe1fa86793908e2bd466ce12768a8d05bcf3415e80577487128ef58b224771

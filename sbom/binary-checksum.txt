@@ -1,1 +1,1 @@
-12e9564a4e797a4ad8cea007db58638fc63213a998008a4f1eb4b374ff42590c  target/release/mcp-server-meal-prep
+2efe1fa86793908e2bd466ce12768a8d05bcf3415e80577487128ef58b224771  target/release/mcp-server-meal-prep

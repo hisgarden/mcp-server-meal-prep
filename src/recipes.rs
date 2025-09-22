@@ -596,6 +596,120 @@ pub fn get_recipe_database() -> RecipeDatabase {
                         .to_string(),
                 ],
             },
+            Recipe {
+                name: "🧋 Hong Kong Milk Tea (港式奶茶)".to_string(),
+                recipe_type: "Beverage".to_string(),
+                ingredients: vec![
+                    "4 tbsp Ceylon black tea leaves (錫蘭紅茶)".to_string(),
+                    "2 tbsp Lipton black tea leaves (立頓紅茶)".to_string(),
+                    "1 cup water (水)".to_string(),
+                    "1 cup evaporated milk (淡奶)".to_string(),
+                    "2-3 tbsp sugar (糖)".to_string(),
+                    "1/4 tsp salt (鹽)".to_string(),
+                ],
+                instructions: vec![
+                    "Mix Ceylon and Lipton tea leaves in a tea sock or fine strainer (traditional Hong Kong tea blend) (混合錫蘭和立頓茶葉在茶袋中 - 傳統港式茶葉配搭)"
+                        .to_string(),
+                    "Bring water to rolling boil in a large pot (在大鍋中將水煮至沸騰)"
+                        .to_string(),
+                    "Add tea leaves and boil for 3-4 minutes (Hong Kong 'pulling' technique) (加入茶葉煮3-4分鐘 - 港式拉茶技巧)"
+                        .to_string(),
+                    "Reduce heat and simmer for 15-20 minutes until tea is very strong and dark (轉小火燜煮15-20分鐘至茶色濃郁)"
+                        .to_string(),
+                    "Remove tea leaves and return tea to pot (取出茶葉，將茶湯倒回鍋中)"
+                        .to_string(),
+                    "Add salt to enhance flavor (secret Hong Kong technique) (加鹽提味 - 港式秘技)"
+                        .to_string(),
+                    "Heat evaporated milk in separate pot until warm (never boil) (在另一鍋中加熱淡奶至溫熱 - 不要煮沸)"
+                        .to_string(),
+                    "Pour hot tea from height into cup to create froth (traditional 'pulling' method) (從高處倒茶入杯製造泡沫 - 傳統拉茶法)"
+                        .to_string(),
+                    "Add warm evaporated milk gradually while stirring (邊攪拌邊慢慢加入溫熱淡奶)"
+                        .to_string(),
+                    "Add sugar to taste and serve immediately while hot (按口味加糖，趁熱立即享用)"
+                        .to_string(),
+                ],
+            },
+            Recipe {
+                name: "🍞 Hong Kong French Toast (港式西多士)".to_string(),
+                recipe_type: "Dessert".to_string(),
+                ingredients: vec![
+                    "4 slices thick white bread (厚白麵包)".to_string(),
+                    "2 tbsp smooth peanut butter (花生醬)".to_string(),
+                    "2 tbsp condensed milk (煉奶)".to_string(),
+                    "2 large eggs (雞蛋)".to_string(),
+                    "1/4 cup milk (牛奶)".to_string(),
+                    "1 tbsp sugar (糖)".to_string(),
+                    "1/2 tsp vanilla extract (香草精)".to_string(),
+                    "4 tbsp butter (牛油)".to_string(),
+                    "Maple syrup for serving (楓糖漿)".to_string(),
+                    "Powdered sugar for dusting (糖粉)".to_string(),
+                ],
+                instructions: vec![
+                    "Trim crusts from bread slices (traditional Hong Kong style) (切去麵包邊 - 傳統港式做法)"
+                        .to_string(),
+                    "Spread peanut butter on two slices, condensed milk on the other two (兩片塗花生醬，兩片塗煉奶)"
+                        .to_string(),
+                    "Sandwich slices together with fillings inside (將麵包片夾在一起，餡料在內)"
+                        .to_string(),
+                    "Beat eggs with milk, sugar, and vanilla extract in shallow dish (在淺盤中打散雞蛋，加入牛奶、糖和香草精)"
+                        .to_string(),
+                    "Heat butter in large pan over medium heat (在中火的大平底鍋中加熱牛油)"
+                        .to_string(),
+                    "Dip each sandwich in egg mixture, coating both sides thoroughly (將每個三明治浸入蛋液中，兩面都要充分沾滿)"
+                        .to_string(),
+                    "Let excess egg mixture drip off before cooking (下鍋前讓多餘蛋液滴掉)"
+                        .to_string(),
+                    "Fry sandwiches in hot butter until golden brown on both sides (about 2-3 minutes per side) (在熱牛油中煎至兩面金黃 - 每面約2-3分鐘)"
+                        .to_string(),
+                    "Drain on paper towels to remove excess oil (放在廚房紙上吸去多餘油分)"
+                        .to_string(),
+                    "Cut diagonally and serve hot with maple syrup and powdered sugar (對角切開，趁熱配楓糖漿和糖粉享用)"
+                        .to_string(),
+                ],
+            },
+            Recipe {
+                name: "🥚 Hong Kong Egg Waffles (雞蛋仔)".to_string(),
+                recipe_type: "Dessert".to_string(),
+                ingredients: vec![
+                    "1 cup all-purpose flour (麵粉)".to_string(),
+                    "1/2 cup sugar (糖)".to_string(),
+                    "1/2 tsp baking powder (泡打粉)".to_string(),
+                    "1/4 tsp salt (鹽)".to_string(),
+                    "2 large eggs (雞蛋)".to_string(),
+                    "1/2 cup milk (牛奶)".to_string(),
+                    "1/4 cup water (水)".to_string(),
+                    "2 tbsp vegetable oil (植物油)".to_string(),
+                    "1 tsp vanilla extract (香草精)".to_string(),
+                    "1/4 tsp pandan extract (optional) (班蘭精)".to_string(),
+                ],
+                instructions: vec![
+                    "Sift flour, sugar, baking powder, and salt into large bowl (將麵粉、糖、泡打粉和鹽過篩到大碗中)"
+                        .to_string(),
+                    "Make well in center and add eggs, milk, water, oil, and extracts (在中央挖洞，加入雞蛋、牛奶、水、油和香精)"
+                        .to_string(),
+                    "Whisk until smooth batter forms (no lumps - Hong Kong technique) (攪拌至光滑麵糊 - 無顆粒，港式技巧)"
+                        .to_string(),
+                    "Let batter rest for 30 minutes (essential for authentic texture) (讓麵糊靜置30分鐘 - 正宗口感關鍵)"
+                        .to_string(),
+                    "Preheat egg waffle pan over medium heat (traditional cast iron pan) (中火預熱雞蛋仔鍋 - 傳統鑄鐵鍋)"
+                        .to_string(),
+                    "Lightly grease both sides of pan with oil (在鍋的兩面輕塗油)"
+                        .to_string(),
+                    "Pour batter into bottom pan, filling each cavity 3/4 full (將麵糊倒入下鍋，每個洞填3/4滿)"
+                        .to_string(),
+                    "Close pan and flip immediately (合上鍋蓋並立即翻轉)"
+                        .to_string(),
+                    "Cook for 2-3 minutes, then flip again (煮2-3分鐘，然後再次翻轉)"
+                        .to_string(),
+                    "Continue cooking and flipping every 30 seconds until golden brown and crispy (繼續每30秒翻轉，直至金黃酥脆)"
+                        .to_string(),
+                    "Remove from pan and let cool slightly before serving (從鍋中取出，稍涼後享用)"
+                        .to_string(),
+                    "Best eaten fresh and warm (traditional Hong Kong street food style) (趁熱新鮮享用 - 傳統港式街頭小食風格)"
+                        .to_string(),
+                ],
+            },
         ]),
     );
 
