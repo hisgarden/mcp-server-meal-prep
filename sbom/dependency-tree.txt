@@ -6,7 +6,7 @@ mcp-server-meal-prep v1.0.0 (/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep)
 │   ├── chrono v0.4.42 alloc,clock,default,iana-time-zone,js-sys,now,oldtime,serde,std,wasm-bindgen,wasmbind,winapi,windows-link
 │   │   ├── iana-time-zone v0.1.64 fallback
 │   │   │   └── core-foundation-sys v0.8.7 default,link
-│   │   ├── num-traits v0.2.19 std
+│   │   ├── num-traits v0.2.19 default,std
 │   │   │   [build-dependencies]
 │   │   │   └── autocfg v1.5.0 
 │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std
@@ -377,7 +377,7 @@ mcp-server-meal-prep v1.0.0 (/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep)
 │   │   │   │   │   ├── memchr v2.7.5 alloc,default,std
 │   │   │   │   │   └── regex-automata v0.4.10 alloc,dfa-build,dfa-onepass,dfa-search,hybrid,meta,nfa,nfa-backtrack,nfa-pikevm,nfa-thompson,perf,perf-inline,perf-literal,perf-literal-multisubstring,perf-literal-substring,std,syntax,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment,unicode-word-boundary (*)
 │   │   │   │   ├── btoi v0.4.3 default,std
-│   │   │   │   │   └── num-traits v0.2.19 std (*)
+│   │   │   │   │   └── num-traits v0.2.19 default,std (*)
 │   │   │   │   ├── gix-date v0.8.7 
 │   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
 │   │   │   │   │   ├── itoa v1.0.15 
@@ -439,7 +439,7 @@ mcp-server-meal-prep v1.0.0 (/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep)
 │   │   │   │   │   │   │   │   │   └── crossbeam-utils v0.8.21 default,std
 │   │   │   │   │   │   │   │   └── crossbeam-utils v0.8.21 default,std
 │   │   │   │   │   │   │   └── rayon v1.11.0 
-│   │   │   │   │   │   │       ├── either v1.15.0 
+│   │   │   │   │   │   │       ├── either v1.15.0 std,use_std
 │   │   │   │   │   │   │       └── rayon-core v1.13.0 
 │   │   │   │   │   │   │           ├── crossbeam-deque v0.8.6 default,std (*)
 │   │   │   │   │   │   │           └── crossbeam-utils v0.8.21 default,std
@@ -986,7 +986,7 @@ mcp-server-meal-prep v1.0.0 (/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep)
 │   │   │   ├── byteorder v1.5.0 default,std
 │   │   │   ├── rmp v0.8.14 default,std
 │   │   │   │   ├── byteorder v1.5.0 default,std
-│   │   │   │   ├── num-traits v0.2.19 std (*)
+│   │   │   │   ├── num-traits v0.2.19 default,std (*)
 │   │   │   │   └── paste v1.0.15 (proc-macro) 
 │   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
 │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
@@ -1513,6 +1513,41 @@ mcp-server-meal-prep v1.0.0 (/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep)
 │   ├── toml-span v0.2.1 reporting (*)
 │   ├── twox-hash v1.6.3  (*)
 │   ├── url v2.5.7 default,serde,std (*)
+│   └── walkdir v2.5.0  (*)
+├── criterion v0.5.1 cargo_bench_support,default,html_reports,plotters,rayon
+│   ├── anes v0.1.6 default
+│   ├── cast v0.3.0 
+│   ├── ciborium v0.2.2 default,std
+│   │   ├── ciborium-io v0.2.2 alloc,std
+│   │   ├── ciborium-ll v0.2.2 
+│   │   │   ├── ciborium-io v0.2.2 alloc,std
+│   │   │   └── half v2.6.0 
+│   │   │       └── cfg-if v1.0.3 
+│   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   ├── clap v4.5.48 color,default,derive,env,error-context,help,std,suggestions,usage (*)
+│   ├── criterion-plot v0.5.0 
+│   │   ├── cast v0.3.0 
+│   │   └── itertools v0.10.5 default,use_alloc,use_std
+│   │       └── either v1.15.0 std,use_std
+│   ├── is-terminal v0.4.16 
+│   │   └── libc v0.2.175 default,extra_traits,std
+│   ├── itertools v0.10.5 default,use_alloc,use_std (*)
+│   ├── num-traits v0.2.19 default,std (*)
+│   ├── once_cell v1.21.3 alloc,default,race,std
+│   ├── oorandom v11.1.5 
+│   ├── plotters v0.3.7 area_series,line_series,plotters-svg,svg_backend
+│   │   ├── num-traits v0.2.19 default,std (*)
+│   │   ├── plotters-backend v0.3.7 
+│   │   └── plotters-svg v0.3.7 
+│   │       └── plotters-backend v0.3.7 
+│   ├── rayon v1.11.0  (*)
+│   ├── regex v1.11.2 default,perf,perf-backtrack,perf-cache,perf-dfa,perf-inline,perf-literal,perf-onepass,std,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment (*)
+│   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   ├── serde_derive v1.0.226 (proc-macro) default (*)
+│   ├── serde_json v1.0.145 default,std,unbounded_depth (*)
+│   ├── tinytemplate v1.2.1 
+│   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   └── serde_json v1.0.145 default,std,unbounded_depth (*)
 │   └── walkdir v2.5.0  (*)
 └── tokio-test v0.4.4 
     ├── async-stream v0.3.6 

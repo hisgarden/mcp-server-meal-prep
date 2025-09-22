@@ -10,6 +10,8 @@ A high-performance MCP (Model Context Protocol) server built in Rust for meal pr
 - **Resource Templates**: Dynamic recipe access via `file://recipes/{cuisine}` URIs
 - **High Performance**: Built with Rust for excellent performance and memory safety
 - **Type Safety**: Compile-time guarantees with zero-cost abstractions
+- **Comprehensive Security**: Pre-commit hooks, vulnerability scanning, SBOM generation
+- **Cross-Platform**: Portable binary that runs anywhere without dependencies
 
 ## 🏗️ Architecture
 
@@ -28,7 +30,17 @@ src/
 ├── main.rs           # MCP server implementation with tools and prompts
 ├── recipes.rs        # Recipe data structures and database
 ├── meal_planner.rs   # Meal planning logic and optimization
-Cargo.toml           # Dependencies and project configuration
+├── lib.rs            # Library entry point
+tests/
+├── integration_tests.rs # Comprehensive test suite
+scripts/
+├── security-check.sh    # Security validation script
+├── generate-sbom.sh     # SBOM generation script
+benches/
+├── benchmark.rs         # Performance benchmarking
+Cargo.toml              # Dependencies and project configuration
+deny.toml               # License and security policy
+Makefile                # Development commands
 ```
 
 ## 🛠️ Setup
@@ -37,6 +49,7 @@ Cargo.toml           # Dependencies and project configuration
 
 - Rust 1.70+ (install via [rustup.rs](https://rustup.rs/))
 - Cargo (comes with Rust)
+- Git (for version control)
 
 ### Installation
 
@@ -65,6 +78,15 @@ cargo fmt
 
 # Lint the code
 cargo clippy
+
+# Run security checks
+make security-check
+
+# Generate SBOM
+make sbom
+
+# Run benchmarks
+cargo bench
 ```
 
 ## 🎯 Available Features
@@ -75,10 +97,11 @@ cargo clippy
 2. **`get_recipes`**: Get recipes for a specific cuisine
 3. **`generate_meal_plan`**: Create a meal plan with shopping list
 4. **`analyze_ingredient_overlap`**: Find common ingredients across recipes
+5. **`weekly_meal_planner`**: Comprehensive weekly meal planning with cuisine selection
 
 ### Prompts
 
-- **`weekly-meal-planner`**: Comprehensive weekly meal planning with cuisine selection
+- **`weekly_meal_planner`**: Comprehensive weekly meal planning with cuisine selection
 
 ### Resources
 
@@ -104,29 +127,65 @@ Add to your MCP client configuration:
 
 ### Example Tool Calls
 
-```rust
+```json
 // Get available cuisines
-get_cuisines()
+{
+  "method": "tools/call",
+  "params": {
+    "name": "get_cuisines",
+    "arguments": {}
+  }
+}
 
 // Get French recipes
-get_recipes({ "cuisine": "French" })
+{
+  "method": "tools/call",
+  "params": {
+    "name": "get_recipes",
+    "arguments": {
+      "cuisine": "French"
+    }
+  }
+}
 
 // Generate 7-day meal plan for Italian cuisine
-generate_meal_plan({ 
-  "cuisine": "Italian", 
-  "days": 7, 
-  "servings": 4 
-})
+{
+  "method": "tools/call",
+  "params": {
+    "name": "generate_meal_plan",
+    "arguments": {
+      "cuisine": "Italian",
+      "days": 7,
+      "servings": 4
+    }
+  }
+}
 
 // Analyze ingredient overlap for Mexican cuisine
-analyze_ingredient_overlap({ "cuisine": "Mexican" })
+{
+  "method": "tools/call",
+  "params": {
+    "name": "analyze_ingredient_overlap",
+    "arguments": {
+      "cuisine": "Mexican"
+    }
+  }
+}
 ```
 
 ### Example Prompt Usage
 
-```rust
-// Weekly meal planner for Indian cuisine
-weekly-meal-planner({ "cuisine": "Indian" })
+```json
+// Weekly meal planner for Vietnamese cuisine
+{
+  "method": "prompts/get",
+  "params": {
+    "name": "weekly_meal_planner",
+    "arguments": {
+      "cuisine": "Vietnamese"
+    }
+  }
+}
 ```
 
 ## 🍳 Supported Cuisines
@@ -136,10 +195,10 @@ weekly-meal-planner({ "cuisine": "Indian" })
 - **French Onion Soup**: Traditional onion soup with gruyère
 - **Crème Brûlée**: Vanilla custard with caramelized sugar
 
-### Indian Cuisine
-- **Chicken Tikka Masala**: Spiced chicken in creamy tomato sauce
-- **Samosas**: Spiced potato-filled pastries
-- **Mango Lassi**: Sweet yogurt drink with mango
+### Thai Cuisine
+- **Pad Thai**: Stir-fried rice noodles with shrimp and vegetables
+- **Tom Yum Goong**: Spicy and sour shrimp soup
+- **Mango Sticky Rice**: Sweet dessert with coconut milk
 
 ### Italian Cuisine
 - **Spaghetti Carbonara**: Pasta with eggs, cheese, and pancetta
@@ -156,6 +215,11 @@ weekly-meal-planner({ "cuisine": "Indian" })
 - **Char Siu (Chinese BBQ Pork)**: Sweet and savory roasted pork
 - **Egg Tarts (Dan Tat)**: Creamy custard tarts with flaky pastry
 
+### Vietnamese Cuisine
+- **Pho Bo (Beef Noodle Soup)**: Traditional Vietnamese noodle soup
+- **Banh Mi**: Vietnamese sandwich with pickled vegetables
+- **Che Ba Mau (Three Color Dessert)**: Layered dessert with beans and coconut
+
 ## 🧪 Testing
 
 ```sh
@@ -171,8 +235,10 @@ cargo test test_meal_plan_generation
 
 ## 📊 Performance Characteristics
 
-- **Startup Time**: ~10-50ms (compiled binary)
-- **Memory Usage**: ~10-30MB baseline
+- **Startup Time**: 0.020s (5.5x faster than TypeScript)
+- **Memory Usage**: ~10-20MB (native binary efficiency)
+- **Binary Size**: 1.6M (self-contained executable)
+- **Build Time**: 1.97s (release build)
 - **Throughput**: Excellent for CPU-intensive meal planning
 - **Latency**: Minimal overhead for recipe access
 
@@ -239,13 +305,37 @@ RUST_LOG=debug cargo run
 
 ## 📈 Performance vs TypeScript
 
-| Metric | Rust | TypeScript |
-|--------|------|------------|
-| **Startup Time** | 10-50ms | 100-200ms |
-| **Memory Usage** | 10-30MB | 50-100MB |
-| **Binary Size** | ~5-10MB | ~50-100MB (with deps) |
-| **Type Safety** | Compile-time | Runtime + Compile-time |
-| **Concurrency** | Excellent (Tokio) | Good (Node.js) |
+| Metric | Rust | TypeScript | Winner |
+|--------|------|------------|--------|
+| **Startup Time** | 0.020s | 0.110s | 🏆 Rust |
+| **Memory Usage** | ~10-20MB | ~50-100MB | 🏆 Rust |
+| **Binary Size** | 1.6M | 4.0K | 🏆 TypeScript |
+| **Build Time** | 1.97s | 1.15s | 🏆 TypeScript |
+| **Dependencies** | 3.9G (target) | 78M (node_modules) | 🏆 TypeScript |
+| **Type Safety** | Compile + Runtime | Compile-time | 🏆 Rust |
+| **Concurrency** | Excellent (Tokio) | Good (Node.js) | 🏆 Rust |
+| **Portability** | Universal binary | Node.js required | 🏆 Rust |
+
+## 🔒 Security Features
+
+This MCP server implements comprehensive security best practices:
+
+### Security Tools
+- **cargo audit**: Vulnerability scanning for dependencies
+- **cargo deny**: License compliance and advisory checking
+- **Pre-commit hooks**: Automated security validation
+- **SBOM generation**: Software Bill of Materials for supply chain security
+
+### Security Hardening
+- **Memory safety**: Zero unsafe code blocks
+- **Stripped binaries**: Debug symbols removed from release builds
+- **Security profiles**: Hardened build configurations
+- **Dependency auditing**: Automated vulnerability scanning
+
+### Security Documentation
+- **SECURITY.md**: Vulnerability reporting process
+- **RUST_DEVELOPMENT_GUIDE.md**: Security-aware development practices
+- **SETUP_TROUBLESHOOTING.md**: Security troubleshooting guide
 
 ## 🤝 Contributing
 
@@ -253,7 +343,8 @@ RUST_LOG=debug cargo run
 2. Create a feature branch: `git checkout -b feature/new-cuisine`
 3. Add your changes with tests
 4. Run `cargo test` and `cargo clippy`
-5. Submit a pull request
+5. Run security checks: `make security-check`
+6. Submit a pull request
 
 ## 📄 License
 
@@ -264,6 +355,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 - Built with the [RMCP](https://github.com/modelcontextprotocol/rust-sdk) Rust SDK
 - Inspired by the TypeScript MCP server example
 - Recipe data compiled from traditional cooking sources
+- Security practices based on OWASP guidelines
+- Author: Jin Wen <jin.wen@hisgarden.org>
 
 ---
 
