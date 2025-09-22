@@ -1,0 +1,1531 @@
+mcp-server-meal-prep v1.0.0 (/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep) 
+├── anyhow v1.0.100 default,std
+├── auditable v0.2.0 
+├── rmcp v0.2.1 base64,default,macros,server,transport-async-rw,transport-io
+│   ├── base64 v0.22.1 alloc,default,std
+│   ├── chrono v0.4.42 alloc,clock,default,iana-time-zone,js-sys,now,oldtime,serde,std,wasm-bindgen,wasmbind,winapi,windows-link
+│   │   ├── iana-time-zone v0.1.64 fallback
+│   │   │   └── core-foundation-sys v0.8.7 default,link
+│   │   ├── num-traits v0.2.19 std
+│   │   │   [build-dependencies]
+│   │   │   └── autocfg v1.5.0 
+│   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std
+│   │       ├── serde_core v1.0.226 alloc,default,rc,result,std
+│   │       └── serde_derive v1.0.226 (proc-macro) default
+│   │           ├── proc-macro2 v1.0.101 default,proc-macro
+│   │           │   └── unicode-ident v1.0.19 
+│   │           ├── quote v1.0.40 default,proc-macro
+│   │           │   └── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │           └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut
+│   │               ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │               ├── quote v1.0.40 default,proc-macro (*)
+│   │               └── unicode-ident v1.0.19 
+│   ├── futures v0.3.31 alloc,async-await,default,executor,futures-executor,std
+│   │   ├── futures-channel v0.3.31 alloc,default,futures-sink,sink,std
+│   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   └── futures-sink v0.3.31 alloc,default,std
+│   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   ├── futures-executor v0.3.31 std
+│   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   ├── futures-task v0.3.31 alloc,std
+│   │   │   └── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std
+│   │   │       ├── futures-channel v0.3.31 alloc,default,futures-sink,sink,std (*)
+│   │   │       ├── futures-core v0.3.31 alloc,default,std
+│   │   │       ├── futures-io v0.3.31 std
+│   │   │       ├── futures-macro v0.3.31 (proc-macro) 
+│   │   │       │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │       │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │       │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │       ├── futures-sink v0.3.31 alloc,default,std
+│   │   │       ├── futures-task v0.3.31 alloc,std
+│   │   │       ├── memchr v2.7.5 alloc,default,std
+│   │   │       ├── pin-project-lite v0.2.16 
+│   │   │       ├── pin-utils v0.1.0 
+│   │   │       └── slab v0.4.11 default,std
+│   │   ├── futures-io v0.3.31 std
+│   │   ├── futures-sink v0.3.31 alloc,default,std
+│   │   ├── futures-task v0.3.31 alloc,std
+│   │   └── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std (*)
+│   ├── paste v1.0.15 (proc-macro) 
+│   ├── pin-project-lite v0.2.16 
+│   ├── rmcp-macros v0.2.1 (proc-macro) 
+│   │   ├── darling v0.20.11 default,suggestions
+│   │   │   ├── darling_core v0.20.11 strsim,suggestions
+│   │   │   │   ├── fnv v1.0.7 default,std
+│   │   │   │   ├── ident_case v1.0.1 
+│   │   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │   ├── strsim v0.11.1 
+│   │   │   │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   └── darling_macro v0.20.11 (proc-macro) 
+│   │   │       ├── darling_core v0.20.11 strsim,suggestions (*)
+│   │   │       ├── quote v1.0.40 default,proc-macro (*)
+│   │   │       └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   ├── serde_json v1.0.145 default,std
+│   │   │   ├── itoa v1.0.15 
+│   │   │   ├── memchr v2.7.5 alloc,std
+│   │   │   ├── ryu v1.0.20 
+│   │   │   └── serde_core v1.0.226 std
+│   │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   ├── schemars v0.8.22 chrono,default,derive,schemars_derive
+│   │   ├── chrono v0.4.42 alloc,clock,default,iana-time-zone,js-sys,now,oldtime,serde,std,wasm-bindgen,wasmbind,winapi,windows-link (*)
+│   │   ├── dyn-clone v1.0.20 
+│   │   ├── schemars_derive v0.8.22 (proc-macro) 
+│   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   ├── serde_derive_internals v0.29.1 
+│   │   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   └── serde_json v1.0.145 default,std,unbounded_depth
+│   │       ├── itoa v1.0.15 
+│   │       ├── memchr v2.7.5 alloc,default,std
+│   │       ├── ryu v1.0.20 
+│   │       └── serde_core v1.0.226 alloc,default,rc,result,std
+│   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   ├── serde_json v1.0.145 default,std,unbounded_depth (*)
+│   ├── thiserror v2.0.16 default,std
+│   │   └── thiserror-impl v2.0.16 (proc-macro) 
+│   │       ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │       ├── quote v1.0.40 default,proc-macro (*)
+│   │       └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros
+│   │   ├── bytes v1.10.1 default,std
+│   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   ├── mio v1.0.4 net,os-ext,os-poll
+│   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   ├── parking_lot v0.12.4 default
+│   │   │   ├── lock_api v0.4.13 atomic_usize,default
+│   │   │   │   └── scopeguard v1.2.0 
+│   │   │   │   [build-dependencies]
+│   │   │   │   └── autocfg v1.5.0 
+│   │   │   └── parking_lot_core v0.9.11 
+│   │   │       ├── cfg-if v1.0.3 
+│   │   │       ├── libc v0.2.175 default,extra_traits,std
+│   │   │       └── smallvec v1.15.1 const_generics,const_new,write
+│   │   ├── pin-project-lite v0.2.16 
+│   │   ├── signal-hook-registry v1.4.6 
+│   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   ├── socket2 v0.6.0 all
+│   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   └── tokio-macros v2.5.0 (proc-macro) 
+│   │       ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │       ├── quote v1.0.40 default,proc-macro (*)
+│   │       └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   ├── tokio-util v0.7.16 codec,default,io
+│   │   ├── bytes v1.10.1 default,std
+│   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   ├── futures-sink v0.3.31 alloc,default,std
+│   │   ├── pin-project-lite v0.2.16 
+│   │   └── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   └── tracing v0.1.41 attributes,default,std,tracing-attributes
+│       ├── pin-project-lite v0.2.16 
+│       ├── tracing-attributes v0.1.30 (proc-macro) 
+│       │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│       │   ├── quote v1.0.40 default,proc-macro (*)
+│       │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│       └── tracing-core v0.1.34 default,once_cell,std
+│           └── once_cell v1.21.3 alloc,default,race,std
+├── schemars v0.8.22 chrono,default,derive,schemars_derive (*)
+├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+├── serde_json v1.0.145 default,std,unbounded_depth (*)
+├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+├── tracing v0.1.41 attributes,default,std,tracing-attributes (*)
+└── tracing-subscriber v0.3.20 alloc,ansi,default,env-filter,fmt,matchers,nu-ansi-term,once_cell,registry,sharded-slab,smallvec,std,thread_local,tracing,tracing-log
+    ├── matchers v0.2.0 
+    │   └── regex-automata v0.4.10 alloc,dfa-build,dfa-onepass,dfa-search,hybrid,meta,nfa,nfa-backtrack,nfa-pikevm,nfa-thompson,perf,perf-inline,perf-literal,perf-literal-multisubstring,perf-literal-substring,std,syntax,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment,unicode-word-boundary
+    │       ├── aho-corasick v1.1.3 default,perf-literal,std
+    │       │   └── memchr v2.7.5 alloc,default,std
+    │       ├── memchr v2.7.5 alloc,default,std
+    │       └── regex-syntax v0.8.6 default,std,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment
+    ├── nu-ansi-term v0.50.1 
+    ├── once_cell v1.21.3 alloc,default,race,std
+    ├── regex-automata v0.4.10 alloc,dfa-build,dfa-onepass,dfa-search,hybrid,meta,nfa,nfa-backtrack,nfa-pikevm,nfa-thompson,perf,perf-inline,perf-literal,perf-literal-multisubstring,perf-literal-substring,std,syntax,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment,unicode-word-boundary (*)
+    ├── sharded-slab v0.1.7 
+    │   └── lazy_static v1.5.0 
+    ├── smallvec v1.15.1 const_generics,const_new,write
+    ├── thread_local v1.1.9 
+    │   └── cfg-if v1.0.3 
+    ├── tracing v0.1.41 attributes,default,std,tracing-attributes (*)
+    ├── tracing-core v0.1.34 default,once_cell,std (*)
+    └── tracing-log v0.2.0 log-tracer,std
+        ├── log v0.4.28 std
+        ├── once_cell v1.21.3 alloc,default,race,std
+        └── tracing-core v0.1.34 default,once_cell,std (*)
+[dev-dependencies]
+├── cargo-audit v0.18.3 binary-scanning,default
+│   ├── abscissa_core v0.6.0 application,arc-swap,clap,color-eyre,config,default,options,regex,secrecy,secrets,semver,serde,termcolor,terminal,testing,toml,trace,tracing,tracing-log,tracing-subscriber,wait-timeout
+│   │   ├── abscissa_derive v0.6.0 (proc-macro) 
+│   │   │   ├── ident_case v1.0.1 
+│   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   ├── syn v1.0.109 clone-impls,default,derive,extra-traits,full,parsing,printing,proc-macro,quote,visit
+│   │   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │   └── unicode-ident v1.0.19 
+│   │   │   └── synstructure v0.12.6 default,proc-macro
+│   │   │       ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │       ├── quote v1.0.40 default,proc-macro (*)
+│   │   │       ├── syn v1.0.109 clone-impls,default,derive,extra-traits,full,parsing,printing,proc-macro,quote,visit (*)
+│   │   │       └── unicode-xid v0.2.6 default
+│   │   ├── arc-swap v1.7.1 
+│   │   ├── backtrace v0.3.75 default,std
+│   │   │   ├── addr2line v0.24.2 
+│   │   │   │   └── gimli v0.31.1 read,read-core
+│   │   │   ├── cfg-if v1.0.3 
+│   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   ├── miniz_oxide v0.8.9 with-alloc
+│   │   │   │   └── adler2 v2.0.1 
+│   │   │   ├── object v0.36.7 archive,coff,elf,macho,pe,read_core,unaligned,xcoff
+│   │   │   │   └── memchr v2.7.5 alloc,default,std
+│   │   │   └── rustc-demangle v0.1.26 
+│   │   ├── canonical-path v2.0.2 
+│   │   ├── clap v3.2.25 atty,clap_derive,color,default,derive,once_cell,std,strsim,suggestions,termcolor
+│   │   │   ├── atty v0.2.14 
+│   │   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   ├── bitflags v1.3.2 default
+│   │   │   ├── clap_derive v3.2.25 (proc-macro) default
+│   │   │   │   ├── heck v0.4.1 default
+│   │   │   │   ├── proc-macro-error v1.0.4 default,syn,syn-error
+│   │   │   │   │   ├── proc-macro-error-attr v1.0.4 (proc-macro) 
+│   │   │   │   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │   │   │   └── quote v1.0.40 default,proc-macro (*)
+│   │   │   │   │   │   [build-dependencies]
+│   │   │   │   │   │   └── version_check v0.9.5 
+│   │   │   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │   │   └── syn v1.0.109 clone-impls,default,derive,extra-traits,full,parsing,printing,proc-macro,quote,visit (*)
+│   │   │   │   │   [build-dependencies]
+│   │   │   │   │   └── version_check v0.9.5 
+│   │   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │   └── syn v1.0.109 clone-impls,default,derive,extra-traits,full,parsing,printing,proc-macro,quote,visit (*)
+│   │   │   ├── clap_lex v0.2.4 
+│   │   │   │   └── os_str_bytes v6.6.1 raw_os_str
+│   │   │   ├── indexmap v1.9.3 std
+│   │   │   │   └── hashbrown v0.12.3 raw
+│   │   │   │   [build-dependencies]
+│   │   │   │   └── autocfg v1.5.0 
+│   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   ├── strsim v0.10.0 
+│   │   │   ├── termcolor v1.4.1 
+│   │   │   └── textwrap v0.16.2 
+│   │   ├── color-eyre v0.6.5 
+│   │   │   ├── backtrace v0.3.75 default,std (*)
+│   │   │   ├── eyre v0.6.12 auto-install,default,track-caller
+│   │   │   │   ├── indenter v0.3.4 default
+│   │   │   │   └── once_cell v1.21.3 alloc,default,race,std
+│   │   │   ├── indenter v0.3.4 default
+│   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   └── owo-colors v4.2.2 
+│   │   ├── fs-err v2.11.0 
+│   │   │   [build-dependencies]
+│   │   │   └── autocfg v1.5.0 
+│   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   ├── regex v1.11.2 default,perf,perf-backtrack,perf-cache,perf-dfa,perf-inline,perf-literal,perf-onepass,std,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment
+│   │   │   ├── aho-corasick v1.1.3 default,perf-literal,std (*)
+│   │   │   ├── memchr v2.7.5 alloc,default,std
+│   │   │   ├── regex-automata v0.4.10 alloc,dfa-build,dfa-onepass,dfa-search,hybrid,meta,nfa,nfa-backtrack,nfa-pikevm,nfa-thompson,perf,perf-inline,perf-literal,perf-literal-multisubstring,perf-literal-substring,std,syntax,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment,unicode-word-boundary (*)
+│   │   │   └── regex-syntax v0.8.6 default,std,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment
+│   │   ├── secrecy v0.8.0 alloc,default,serde
+│   │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   └── zeroize v1.8.1 alloc,default
+│   │   ├── semver v1.0.27 default,serde,std
+│   │   │   └── serde_core v1.0.226 alloc,default,rc,result,std
+│   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── termcolor v1.4.1 
+│   │   ├── toml v0.5.11 default
+│   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── tracing v0.1.41 attributes,default,std,tracing-attributes (*)
+│   │   ├── tracing-log v0.1.4 default,log-tracer,std,trace-logger
+│   │   │   ├── log v0.4.28 std
+│   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   └── tracing-core v0.1.34 default,once_cell,std (*)
+│   │   ├── tracing-subscriber v0.3.20 alloc,ansi,default,env-filter,fmt,matchers,nu-ansi-term,once_cell,registry,sharded-slab,smallvec,std,thread_local,tracing,tracing-log (*)
+│   │   └── wait-timeout v0.2.1 
+│   │       └── libc v0.2.175 default,extra_traits,std
+│   ├── auditable-info v0.7.2 auditable-serde,default,serde,serde_json,wasm
+│   │   ├── auditable-extract v0.3.5 wasm,wasmparser
+│   │   │   ├── binfarce v0.2.1 
+│   │   │   └── wasmparser v0.207.0 
+│   │   │       └── bitflags v2.9.4 std
+│   │   ├── auditable-serde v0.6.1 cargo-lock,default,toml
+│   │   │   ├── cargo-lock v9.0.0 dependency-tree,petgraph
+│   │   │   │   ├── petgraph v0.6.5 default,graphmap,matrix_graph,stable_graph
+│   │   │   │   │   ├── fixedbitset v0.4.2 
+│   │   │   │   │   └── indexmap v2.11.4 default,std
+│   │   │   │   │       ├── equivalent v1.0.2 
+│   │   │   │   │       └── hashbrown v0.16.0 
+│   │   │   │   ├── semver v1.0.27 default,serde,std (*)
+│   │   │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   ├── toml v0.7.8 default,display,parse
+│   │   │   │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │   ├── serde_spanned v0.6.9 serde
+│   │   │   │   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │   ├── toml_datetime v0.6.11 serde
+│   │   │   │   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │   └── toml_edit v0.19.15 default,serde
+│   │   │   │   │       ├── indexmap v2.11.4 default,std (*)
+│   │   │   │   │       ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │       ├── serde_spanned v0.6.9 serde (*)
+│   │   │   │   │       ├── toml_datetime v0.6.11 serde (*)
+│   │   │   │   │       └── winnow v0.5.40 alloc,default,simd,std
+│   │   │   │   │           └── memchr v2.7.5 alloc,default,std
+│   │   │   │   └── url v2.5.7 default,serde,std
+│   │   │   │       ├── form_urlencoded v1.2.2 alloc,default,std
+│   │   │   │       │   └── percent-encoding v2.3.2 alloc,default,std
+│   │   │   │       ├── idna v1.1.0 alloc,compiled_data,std
+│   │   │   │       │   ├── idna_adapter v1.2.1 compiled_data
+│   │   │   │       │   │   ├── icu_normalizer v2.0.0 compiled_data
+│   │   │   │       │   │   │   ├── displaydoc v0.2.5 (proc-macro) 
+│   │   │   │       │   │   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │       │   │   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │       │   │   │   │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   │       │   │   │   ├── icu_collections v2.0.0 
+│   │   │   │       │   │   │   │   ├── displaydoc v0.2.5 (proc-macro)  (*)
+│   │   │   │       │   │   │   │   ├── potential_utf v0.1.3 zerovec
+│   │   │   │       │   │   │   │   │   └── zerovec v0.11.4 alloc,derive,yoke
+│   │   │   │       │   │   │   │   │       ├── yoke v0.8.0 alloc,derive,zerofrom
+│   │   │   │       │   │   │   │   │       │   ├── stable_deref_trait v1.2.0 alloc
+│   │   │   │       │   │   │   │   │       │   ├── yoke-derive v0.8.0 (proc-macro) 
+│   │   │   │       │   │   │   │   │       │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │       │   │   │   │   │       │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │       │   │   │   │   │       │   │   ├── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   │       │   │   │   │   │       │   │   └── synstructure v0.13.2 default,proc-macro
+│   │   │   │       │   │   │   │   │       │   │       ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │       │   │   │   │   │       │   │       ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │       │   │   │   │   │       │   │       └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   │       │   │   │   │   │       │   └── zerofrom v0.1.6 alloc,derive
+│   │   │   │       │   │   │   │   │       │       └── zerofrom-derive v0.1.6 (proc-macro) 
+│   │   │   │       │   │   │   │   │       │           ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │       │   │   │   │   │       │           ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │       │   │   │   │   │       │           ├── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   │       │   │   │   │   │       │           └── synstructure v0.13.2 default,proc-macro (*)
+│   │   │   │       │   │   │   │   │       ├── zerofrom v0.1.6 alloc,derive (*)
+│   │   │   │       │   │   │   │   │       └── zerovec-derive v0.11.1 (proc-macro) 
+│   │   │   │       │   │   │   │   │           ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │       │   │   │   │   │           ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │       │   │   │   │   │           └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   │       │   │   │   │   ├── yoke v0.8.0 alloc,derive,zerofrom (*)
+│   │   │   │       │   │   │   │   ├── zerofrom v0.1.6 alloc,derive (*)
+│   │   │   │       │   │   │   │   └── zerovec v0.11.4 alloc,derive,yoke (*)
+│   │   │   │       │   │   │   ├── icu_normalizer_data v2.0.0 
+│   │   │   │       │   │   │   ├── icu_provider v2.0.0 baked,zerotrie
+│   │   │   │       │   │   │   │   ├── displaydoc v0.2.5 (proc-macro)  (*)
+│   │   │   │       │   │   │   │   ├── icu_locale_core v2.0.0 zerovec
+│   │   │   │       │   │   │   │   │   ├── displaydoc v0.2.5 (proc-macro)  (*)
+│   │   │   │       │   │   │   │   │   ├── litemap v0.8.0 alloc
+│   │   │   │       │   │   │   │   │   ├── tinystr v0.8.1 alloc,zerovec
+│   │   │   │       │   │   │   │   │   │   ├── displaydoc v0.2.5 (proc-macro)  (*)
+│   │   │   │       │   │   │   │   │   │   └── zerovec v0.11.4 alloc,derive,yoke (*)
+│   │   │   │       │   │   │   │   │   ├── writeable v0.6.1 
+│   │   │   │       │   │   │   │   │   └── zerovec v0.11.4 alloc,derive,yoke (*)
+│   │   │   │       │   │   │   │   ├── stable_deref_trait v1.2.0 alloc
+│   │   │   │       │   │   │   │   ├── tinystr v0.8.1 alloc,zerovec (*)
+│   │   │   │       │   │   │   │   ├── writeable v0.6.1 
+│   │   │   │       │   │   │   │   ├── yoke v0.8.0 alloc,derive,zerofrom (*)
+│   │   │   │       │   │   │   │   ├── zerofrom v0.1.6 alloc,derive (*)
+│   │   │   │       │   │   │   │   ├── zerotrie v0.2.2 yoke,zerofrom
+│   │   │   │       │   │   │   │   │   ├── displaydoc v0.2.5 (proc-macro)  (*)
+│   │   │   │       │   │   │   │   │   ├── yoke v0.8.0 alloc,derive,zerofrom (*)
+│   │   │   │       │   │   │   │   │   └── zerofrom v0.1.6 alloc,derive (*)
+│   │   │   │       │   │   │   │   └── zerovec v0.11.4 alloc,derive,yoke (*)
+│   │   │   │       │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │       │   │   │   └── zerovec v0.11.4 alloc,derive,yoke (*)
+│   │   │   │       │   │   └── icu_properties v2.0.1 compiled_data
+│   │   │   │       │   │       ├── displaydoc v0.2.5 (proc-macro)  (*)
+│   │   │   │       │   │       ├── icu_collections v2.0.0  (*)
+│   │   │   │       │   │       ├── icu_locale_core v2.0.0 zerovec (*)
+│   │   │   │       │   │       ├── icu_properties_data v2.0.1 
+│   │   │   │       │   │       ├── icu_provider v2.0.0 baked,zerotrie (*)
+│   │   │   │       │   │       ├── potential_utf v0.1.3 zerovec (*)
+│   │   │   │       │   │       ├── zerotrie v0.2.2 yoke,zerofrom (*)
+│   │   │   │       │   │       └── zerovec v0.11.4 alloc,derive,yoke (*)
+│   │   │   │       │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │       │   └── utf8_iter v1.0.4 
+│   │   │   │       ├── percent-encoding v2.3.2 alloc,default,std
+│   │   │   │       └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   ├── semver v1.0.27 default,serde,std (*)
+│   │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   ├── serde_json v1.0.145 default,std,unbounded_depth (*)
+│   │   │   └── topological-sort v0.2.2 
+│   │   ├── miniz_oxide v0.6.2 default,std,with-alloc
+│   │   │   └── adler v1.0.2 
+│   │   └── serde_json v1.0.145 default,std,unbounded_depth (*)
+│   ├── auditable-serde v0.6.1 cargo-lock,default,toml (*)
+│   ├── binfarce v0.2.1 
+│   ├── cargo-lock v9.0.0 dependency-tree,petgraph (*)
+│   ├── clap v3.2.25 atty,clap_derive,color,default,derive,once_cell,std,strsim,suggestions,termcolor (*)
+│   ├── home v0.5.11 
+│   ├── once_cell v1.21.3 alloc,default,race,std
+│   ├── quitters v0.1.0 
+│   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   ├── regex v1.11.2 default,perf,perf-backtrack,perf-cache,perf-dfa,perf-inline,perf-literal,perf-onepass,std,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment (*)
+│   │   └── semver v1.0.27 default,serde,std (*)
+│   ├── rustsec v0.28.6 default,dependency-tree,git
+│   │   ├── cargo-lock v9.0.0 dependency-tree,petgraph (*)
+│   │   ├── cvss v2.1.1 default,serde,std,v3,v4
+│   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── fs-err v2.11.0  (*)
+│   │   ├── gix v0.58.0 attributes,blocking-http-transport-reqwest,blocking-network-client,command,credentials,excludes,gix-protocol,gix-transport,index,max-control,max-performance-safe,pack-cache-lru-dynamic,pack-cache-lru-static,parallel,parallel-walkdir,revision,worktree-mutation
+│   │   │   ├── gix-actor v0.30.0 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode
+│   │   │   │   │   ├── memchr v2.7.5 alloc,default,std
+│   │   │   │   │   └── regex-automata v0.4.10 alloc,dfa-build,dfa-onepass,dfa-search,hybrid,meta,nfa,nfa-backtrack,nfa-pikevm,nfa-thompson,perf,perf-inline,perf-literal,perf-literal-multisubstring,perf-literal-substring,std,syntax,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment,unicode-word-boundary (*)
+│   │   │   │   ├── btoi v0.4.3 default,std
+│   │   │   │   │   └── num-traits v0.2.19 std (*)
+│   │   │   │   ├── gix-date v0.8.7 
+│   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   ├── itoa v1.0.15 
+│   │   │   │   │   ├── thiserror v1.0.69 
+│   │   │   │   │   │   └── thiserror-impl v1.0.69 (proc-macro) 
+│   │   │   │   │   │       ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │   │   │       ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │   │   │       └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   │   │   └── time v0.3.44 alloc,formatting,local-offset,macros,parsing,serde,std
+│   │   │   │   │       ├── deranged v0.5.3 default,powerfmt,serde
+│   │   │   │   │       │   ├── powerfmt v0.2.0 
+│   │   │   │   │       │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │       ├── itoa v1.0.15 
+│   │   │   │   │       ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │       ├── num-conv v0.1.0 
+│   │   │   │   │       ├── num_threads v0.1.7 
+│   │   │   │   │       │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │       ├── powerfmt v0.2.0 
+│   │   │   │   │       ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │       ├── time-core v0.1.6 
+│   │   │   │   │       └── time-macros v0.2.24 (proc-macro) formatting,parsing,serde
+│   │   │   │   │           ├── num-conv v0.1.0 
+│   │   │   │   │           └── time-core v0.1.6 
+│   │   │   │   ├── itoa v1.0.15 
+│   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   └── winnow v0.5.40 alloc,default,simd,std (*)
+│   │   │   ├── gix-attributes v0.22.5 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-glob v0.16.5 
+│   │   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib
+│   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   ├── crc32fast v1.5.0 default,std
+│   │   │   │   │   │   │   └── cfg-if v1.0.3 
+│   │   │   │   │   │   ├── crossbeam-channel v0.5.15 default,std
+│   │   │   │   │   │   │   └── crossbeam-utils v0.8.21 default,std
+│   │   │   │   │   │   ├── flate2 v1.1.2 any_impl,default,miniz_oxide,rust_backend
+│   │   │   │   │   │   │   ├── crc32fast v1.5.0 default,std (*)
+│   │   │   │   │   │   │   └── miniz_oxide v0.8.9 with-alloc (*)
+│   │   │   │   │   │   ├── gix-hash v0.14.2 
+│   │   │   │   │   │   │   ├── faster-hex v0.9.0 
+│   │   │   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   │   │   ├── gix-trace v0.1.13 default
+│   │   │   │   │   │   ├── gix-utils v0.1.14 
+│   │   │   │   │   │   │   ├── fastrand v2.3.0 alloc,default,std
+│   │   │   │   │   │   │   └── unicode-normalization v0.1.24 default,std
+│   │   │   │   │   │   │       └── tinyvec v1.10.0 alloc,default,tinyvec_macros
+│   │   │   │   │   │   │           └── tinyvec_macros v0.1.1 
+│   │   │   │   │   │   ├── jwalk v0.8.1 
+│   │   │   │   │   │   │   ├── crossbeam v0.8.4 alloc,crossbeam-channel,crossbeam-deque,crossbeam-epoch,crossbeam-queue,default,std
+│   │   │   │   │   │   │   │   ├── crossbeam-channel v0.5.15 default,std (*)
+│   │   │   │   │   │   │   │   ├── crossbeam-deque v0.8.6 default,std
+│   │   │   │   │   │   │   │   │   ├── crossbeam-epoch v0.9.18 alloc,std
+│   │   │   │   │   │   │   │   │   │   └── crossbeam-utils v0.8.21 default,std
+│   │   │   │   │   │   │   │   │   └── crossbeam-utils v0.8.21 default,std
+│   │   │   │   │   │   │   │   ├── crossbeam-epoch v0.9.18 alloc,std (*)
+│   │   │   │   │   │   │   │   ├── crossbeam-queue v0.3.12 alloc,std
+│   │   │   │   │   │   │   │   │   └── crossbeam-utils v0.8.21 default,std
+│   │   │   │   │   │   │   │   └── crossbeam-utils v0.8.21 default,std
+│   │   │   │   │   │   │   └── rayon v1.11.0 
+│   │   │   │   │   │   │       ├── either v1.15.0 
+│   │   │   │   │   │   │       └── rayon-core v1.13.0 
+│   │   │   │   │   │   │           ├── crossbeam-deque v0.8.6 default,std (*)
+│   │   │   │   │   │   │           └── crossbeam-utils v0.8.21 default,std
+│   │   │   │   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   │   │   │   ├── parking_lot v0.12.4 default (*)
+│   │   │   │   │   │   ├── prodash v28.0.0 
+│   │   │   │   │   │   ├── sha1_smol v1.0.1 
+│   │   │   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   │   │   └── walkdir v2.5.0 
+│   │   │   │   │   │       └── same-file v1.0.6 
+│   │   │   │   │   └── gix-path v0.10.20 
+│   │   │   │   │       ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │       ├── gix-trace v0.1.13 default
+│   │   │   │   │       ├── gix-validate v0.10.0 
+│   │   │   │   │       │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │       │   └── thiserror v2.0.16 default,std (*)
+│   │   │   │   │       ├── home v0.5.11 
+│   │   │   │   │       ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   │   │       └── thiserror v2.0.16 default,std (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-quote v0.4.15 
+│   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   │   │   └── thiserror v2.0.16 default,std (*)
+│   │   │   │   ├── gix-trace v0.1.13 default
+│   │   │   │   ├── kstring v2.0.2 default,std,unsafe
+│   │   │   │   │   └── static_assertions v1.1.0 
+│   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   └── unicode-bom v2.0.3 
+│   │   │   ├── gix-command v0.3.11 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-trace v0.1.13 default
+│   │   │   │   └── shell-words v1.1.0 default,std
+│   │   │   ├── gix-commitgraph v0.24.3 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-chunk v0.4.11 
+│   │   │   │   │   └── thiserror v2.0.16 default,std (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── memmap2 v0.9.8 
+│   │   │   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-config v0.34.0 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-config-value v0.14.12 
+│   │   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   └── thiserror v2.0.16 default,std (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-ref v0.41.0 
+│   │   │   │   │   ├── gix-actor v0.30.0  (*)
+│   │   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   │   ├── gix-fs v0.10.2 
+│   │   │   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   │   │   └── gix-utils v0.1.14  (*)
+│   │   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   │   ├── gix-lock v13.1.1 
+│   │   │   │   │   │   ├── gix-tempfile v13.1.1 
+│   │   │   │   │   │   │   ├── gix-fs v0.10.2  (*)
+│   │   │   │   │   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   │   │   │   │   ├── parking_lot v0.12.4 default (*)
+│   │   │   │   │   │   │   └── tempfile v3.22.0 default,getrandom
+│   │   │   │   │   │   │       ├── fastrand v2.3.0 alloc,default,std
+│   │   │   │   │   │   │       ├── getrandom v0.3.3 
+│   │   │   │   │   │   │       │   ├── cfg-if v1.0.3 
+│   │   │   │   │   │   │       │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │       ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   │   │   │   │       └── rustix v1.1.2 alloc,default,fs,std
+│   │   │   │   │   │   │           ├── bitflags v2.9.4 std
+│   │   │   │   │   │   │           ├── errno v0.3.14 std
+│   │   │   │   │   │   │           │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │           └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   │   ├── gix-object v0.41.0 
+│   │   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   │   ├── btoi v0.4.3 default,std (*)
+│   │   │   │   │   │   ├── gix-actor v0.30.0  (*)
+│   │   │   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   │   │   ├── gix-validate v0.8.5 
+│   │   │   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   │   │   ├── itoa v1.0.15 
+│   │   │   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   │   │   └── winnow v0.5.40 alloc,default,simd,std (*)
+│   │   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   │   ├── gix-tempfile v13.1.1  (*)
+│   │   │   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   │   │   ├── gix-validate v0.8.5  (*)
+│   │   │   │   │   ├── memmap2 v0.9.8  (*)
+│   │   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   │   └── winnow v0.5.40 alloc,default,simd,std (*)
+│   │   │   │   ├── gix-sec v0.10.12 
+│   │   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   ├── memchr v2.7.5 alloc,default,std
+│   │   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   ├── unicode-bom v2.0.3 
+│   │   │   │   └── winnow v0.5.40 alloc,default,simd,std (*)
+│   │   │   ├── gix-credentials v0.24.5 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-command v0.3.11  (*)
+│   │   │   │   ├── gix-config-value v0.14.12  (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-prompt v0.8.9 
+│   │   │   │   │   ├── gix-command v0.3.11  (*)
+│   │   │   │   │   ├── gix-config-value v0.14.12  (*)
+│   │   │   │   │   ├── parking_lot v0.12.4 default (*)
+│   │   │   │   │   ├── rustix v0.38.44 alloc,default,fs,libc-extra-traits,std,termios,use-libc-auxv
+│   │   │   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   │   │   ├── errno v0.3.14 std (*)
+│   │   │   │   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   └── thiserror v2.0.16 default,std (*)
+│   │   │   │   ├── gix-sec v0.10.12  (*)
+│   │   │   │   ├── gix-trace v0.1.13 default
+│   │   │   │   ├── gix-url v0.27.5 
+│   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   │   ├── home v0.5.11 
+│   │   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   │   └── url v2.5.7 default,serde,std (*)
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   ├── gix-diff v0.40.0 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-discover v0.29.0 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-fs v0.10.2  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-ref v0.41.0  (*)
+│   │   │   │   ├── gix-sec v0.10.12  (*)
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   ├── gix-filter v0.9.0 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── encoding_rs v0.8.35 alloc,default
+│   │   │   │   │   └── cfg-if v1.0.3 
+│   │   │   │   ├── gix-attributes v0.22.5  (*)
+│   │   │   │   ├── gix-command v0.3.11  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   ├── gix-packetline-blocking v0.17.5 blocking-io,default
+│   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   ├── faster-hex v0.9.0 
+│   │   │   │   │   ├── gix-trace v0.1.13 default
+│   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-quote v0.4.15  (*)
+│   │   │   │   ├── gix-trace v0.1.13 default
+│   │   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-fs v0.10.2  (*)
+│   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-hashtable v0.5.2 
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── hashbrown v0.14.5 ahash,allocator-api2,default,inline-more,raw
+│   │   │   │   │   ├── ahash v0.8.12 
+│   │   │   │   │   │   ├── cfg-if v1.0.3 
+│   │   │   │   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   │   │   │   └── zerocopy v0.8.27 simd
+│   │   │   │   │   │   [build-dependencies]
+│   │   │   │   │   │   └── version_check v0.9.5 
+│   │   │   │   │   └── allocator-api2 v0.2.21 alloc
+│   │   │   │   └── parking_lot v0.12.4 default (*)
+│   │   │   ├── gix-ignore v0.11.4 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-trace v0.1.13 default
+│   │   │   │   └── unicode-bom v2.0.3 
+│   │   │   ├── gix-index v0.29.0 
+│   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── btoi v0.4.3 default,std (*)
+│   │   │   │   ├── filetime v0.2.26 
+│   │   │   │   │   ├── cfg-if v1.0.3 
+│   │   │   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   ├── gix-bitmap v0.2.14 
+│   │   │   │   │   └── thiserror v2.0.16 default,std (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-fs v0.10.2  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-lock v13.1.1  (*)
+│   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   ├── gix-traverse v0.37.0 
+│   │   │   │   │   ├── gix-commitgraph v0.24.3  (*)
+│   │   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   │   ├── gix-hashtable v0.5.2  (*)
+│   │   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   │   ├── gix-revwalk v0.12.0 
+│   │   │   │   │   │   ├── gix-commitgraph v0.24.3  (*)
+│   │   │   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   │   │   ├── gix-hashtable v0.5.2  (*)
+│   │   │   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   ├── itoa v1.0.15 
+│   │   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   ├── memmap2 v0.9.8  (*)
+│   │   │   │   ├── rustix v0.38.44 alloc,default,fs,libc-extra-traits,std,termios,use-libc-auxv (*)
+│   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-lock v13.1.1  (*)
+│   │   │   ├── gix-macros v0.1.5 (proc-macro) 
+│   │   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   ├── gix-negotiate v0.12.0 
+│   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   ├── gix-commitgraph v0.24.3  (*)
+│   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   ├── gix-revwalk v0.12.0  (*)
+│   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   ├── gix-odb v0.57.0 
+│   │   │   │   ├── arc-swap v1.7.1 
+│   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-fs v0.10.2  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   ├── gix-pack v0.47.0 object-cache-dynamic,pack-cache-lru-dynamic,pack-cache-lru-static,streaming-input
+│   │   │   │   │   ├── clru v0.6.2 
+│   │   │   │   │   ├── gix-chunk v0.4.11  (*)
+│   │   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   │   ├── gix-hashtable v0.5.2  (*)
+│   │   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   │   ├── gix-tempfile v13.1.1  (*)
+│   │   │   │   │   ├── memmap2 v0.9.8  (*)
+│   │   │   │   │   ├── parking_lot v0.12.4 default (*)
+│   │   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   │   └── uluru v3.1.0 
+│   │   │   │   │       └── arrayvec v0.7.6 
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-quote v0.4.15  (*)
+│   │   │   │   ├── parking_lot v0.12.4 default (*)
+│   │   │   │   ├── tempfile v3.22.0 default,getrandom (*)
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-pack v0.47.0 object-cache-dynamic,pack-cache-lru-dynamic,pack-cache-lru-static,streaming-input (*)
+│   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   ├── gix-pathspec v0.6.0 
+│   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-attributes v0.22.5  (*)
+│   │   │   │   ├── gix-config-value v0.14.12  (*)
+│   │   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-prompt v0.8.9  (*)
+│   │   │   ├── gix-protocol v0.44.2 blocking-client
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-credentials v0.24.5  (*)
+│   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-transport v0.41.2 base64,blocking-client,default,gix-credentials,http-client,http-client-reqwest,reqwest
+│   │   │   │   │   ├── base64 v0.21.7 alloc,default,std
+│   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   ├── gix-command v0.3.11  (*)
+│   │   │   │   │   ├── gix-credentials v0.24.5  (*)
+│   │   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   │   ├── gix-packetline v0.17.6 blocking-io,default
+│   │   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   │   ├── faster-hex v0.9.0 
+│   │   │   │   │   │   ├── gix-trace v0.1.13 default
+│   │   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   │   ├── gix-quote v0.4.15  (*)
+│   │   │   │   │   ├── gix-sec v0.10.12  (*)
+│   │   │   │   │   ├── gix-url v0.27.5  (*)
+│   │   │   │   │   ├── reqwest v0.11.27 __rustls,__tls,async-compression,blocking,gzip,hyper-rustls,rustls,rustls-native-certs,rustls-tls-native-roots,tokio-rustls,tokio-util
+│   │   │   │   │   │   ├── async-compression v0.4.30 gzip,tokio
+│   │   │   │   │   │   │   ├── compression-codecs v0.4.30 flate2,gzip,memchr
+│   │   │   │   │   │   │   │   ├── compression-core v0.4.29 
+│   │   │   │   │   │   │   │   ├── flate2 v1.1.2 any_impl,default,miniz_oxide,rust_backend (*)
+│   │   │   │   │   │   │   │   └── memchr v2.7.5 alloc,default,std
+│   │   │   │   │   │   │   ├── compression-core v0.4.29 
+│   │   │   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   │   │   ├── pin-project-lite v0.2.16 
+│   │   │   │   │   │   │   └── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   ├── base64 v0.21.7 alloc,default,std
+│   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   ├── encoding_rs v0.8.35 alloc,default (*)
+│   │   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   │   ├── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std (*)
+│   │   │   │   │   │   ├── h2 v0.3.27 
+│   │   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   │   ├── fnv v1.0.7 default,std
+│   │   │   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   │   │   ├── futures-sink v0.3.31 alloc,default,std
+│   │   │   │   │   │   │   ├── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std (*)
+│   │   │   │   │   │   │   ├── http v0.2.12 
+│   │   │   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   │   │   ├── fnv v1.0.7 default,std
+│   │   │   │   │   │   │   │   └── itoa v1.0.15 
+│   │   │   │   │   │   │   ├── indexmap v2.11.4 default,std (*)
+│   │   │   │   │   │   │   ├── slab v0.4.11 default,std
+│   │   │   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   │   ├── tokio-util v0.7.16 codec,default,io (*)
+│   │   │   │   │   │   │   └── tracing v0.1.41 attributes,default,std,tracing-attributes (*)
+│   │   │   │   │   │   ├── http v0.2.12  (*)
+│   │   │   │   │   │   ├── http-body v0.4.6 
+│   │   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   │   ├── http v0.2.12  (*)
+│   │   │   │   │   │   │   └── pin-project-lite v0.2.16 
+│   │   │   │   │   │   ├── hyper v0.14.32 client,h2,http1,http2,runtime,socket2,tcp
+│   │   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   │   ├── futures-channel v0.3.31 alloc,default,futures-sink,sink,std (*)
+│   │   │   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   │   │   ├── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std (*)
+│   │   │   │   │   │   │   ├── h2 v0.3.27  (*)
+│   │   │   │   │   │   │   ├── http v0.2.12  (*)
+│   │   │   │   │   │   │   ├── http-body v0.4.6  (*)
+│   │   │   │   │   │   │   ├── httparse v1.10.1 default,std
+│   │   │   │   │   │   │   ├── httpdate v1.0.3 
+│   │   │   │   │   │   │   ├── itoa v1.0.15 
+│   │   │   │   │   │   │   ├── pin-project-lite v0.2.16 
+│   │   │   │   │   │   │   ├── socket2 v0.5.10 all
+│   │   │   │   │   │   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   │   ├── tower-service v0.3.3 
+│   │   │   │   │   │   │   ├── tracing v0.1.41 attributes,default,std,tracing-attributes (*)
+│   │   │   │   │   │   │   └── want v0.3.1 
+│   │   │   │   │   │   │       └── try-lock v0.2.5 
+│   │   │   │   │   │   ├── hyper-rustls v0.24.2 
+│   │   │   │   │   │   │   ├── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std (*)
+│   │   │   │   │   │   │   ├── http v0.2.12  (*)
+│   │   │   │   │   │   │   ├── hyper v0.14.32 client,h2,http1,http2,runtime,socket2,tcp (*)
+│   │   │   │   │   │   │   ├── rustls v0.21.12 dangerous_configuration,default,log,logging,tls12
+│   │   │   │   │   │   │   │   ├── log v0.4.28 std
+│   │   │   │   │   │   │   │   ├── ring v0.17.14 alloc,default,dev_urandom_fallback
+│   │   │   │   │   │   │   │   │   ├── cfg-if v1.0.3 
+│   │   │   │   │   │   │   │   │   ├── getrandom v0.2.16 
+│   │   │   │   │   │   │   │   │   │   ├── cfg-if v1.0.3 
+│   │   │   │   │   │   │   │   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │   │   │   └── untrusted v0.9.0 
+│   │   │   │   │   │   │   │   │   [build-dependencies]
+│   │   │   │   │   │   │   │   │   └── cc v1.2.38 parallel
+│   │   │   │   │   │   │   │   │       ├── find-msvc-tools v0.1.2 
+│   │   │   │   │   │   │   │   │       ├── jobserver v0.1.34 
+│   │   │   │   │   │   │   │   │       │   └── libc v0.2.175 default,std
+│   │   │   │   │   │   │   │   │       ├── libc v0.2.175 default,std
+│   │   │   │   │   │   │   │   │       └── shlex v1.3.0 default,std
+│   │   │   │   │   │   │   │   ├── rustls-webpki v0.101.7 alloc,default,std
+│   │   │   │   │   │   │   │   │   ├── ring v0.17.14 alloc,default,dev_urandom_fallback (*)
+│   │   │   │   │   │   │   │   │   └── untrusted v0.9.0 
+│   │   │   │   │   │   │   │   └── sct v0.7.1 
+│   │   │   │   │   │   │   │       ├── ring v0.17.14 alloc,default,dev_urandom_fallback (*)
+│   │   │   │   │   │   │   │       └── untrusted v0.9.0 
+│   │   │   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   │   └── tokio-rustls v0.24.1 default,logging,tls12
+│   │   │   │   │   │   │       ├── rustls v0.21.12 dangerous_configuration,default,log,logging,tls12 (*)
+│   │   │   │   │   │   │       └── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   ├── ipnet v2.11.0 default,std
+│   │   │   │   │   │   ├── log v0.4.28 std
+│   │   │   │   │   │   ├── mime v0.3.17 
+│   │   │   │   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   │   │   │   ├── percent-encoding v2.3.2 alloc,default,std
+│   │   │   │   │   │   ├── pin-project-lite v0.2.16 
+│   │   │   │   │   │   ├── rustls v0.21.12 dangerous_configuration,default,log,logging,tls12 (*)
+│   │   │   │   │   │   ├── rustls-native-certs v0.6.3 
+│   │   │   │   │   │   │   ├── rustls-pemfile v1.0.4 
+│   │   │   │   │   │   │   │   └── base64 v0.21.7 alloc,default,std
+│   │   │   │   │   │   │   └── security-framework v2.11.1 OSX_10_10,OSX_10_11,OSX_10_12,OSX_10_9,default
+│   │   │   │   │   │   │       ├── bitflags v2.9.4 std
+│   │   │   │   │   │   │       ├── core-foundation v0.9.4 default,link
+│   │   │   │   │   │   │       │   ├── core-foundation-sys v0.8.7 default,link
+│   │   │   │   │   │   │       │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │       ├── core-foundation-sys v0.8.7 default,link
+│   │   │   │   │   │   │       ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │       └── security-framework-sys v2.15.0 OSX_10_10,OSX_10_11,OSX_10_12,OSX_10_9
+│   │   │   │   │   │   │           ├── core-foundation-sys v0.8.7 default,link
+│   │   │   │   │   │   │           └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   ├── rustls-pemfile v1.0.4  (*)
+│   │   │   │   │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │   │   ├── serde_urlencoded v0.7.1 
+│   │   │   │   │   │   │   ├── form_urlencoded v1.2.2 alloc,default,std (*)
+│   │   │   │   │   │   │   ├── itoa v1.0.15 
+│   │   │   │   │   │   │   ├── ryu v1.0.20 
+│   │   │   │   │   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │   │   ├── sync_wrapper v0.1.2 
+│   │   │   │   │   │   ├── system-configuration v0.5.1 
+│   │   │   │   │   │   │   ├── bitflags v1.3.2 default
+│   │   │   │   │   │   │   ├── core-foundation v0.9.4 default,link (*)
+│   │   │   │   │   │   │   └── system-configuration-sys v0.5.0 
+│   │   │   │   │   │   │       ├── core-foundation-sys v0.8.7 default,link
+│   │   │   │   │   │   │       └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   ├── tokio-rustls v0.24.1 default,logging,tls12 (*)
+│   │   │   │   │   │   ├── tokio-util v0.7.16 codec,default,io (*)
+│   │   │   │   │   │   ├── tower-service v0.3.3 
+│   │   │   │   │   │   └── url v2.5.7 default,serde,std (*)
+│   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   │   ├── maybe-async v0.2.10 (proc-macro) default,is_sync
+│   │   │   │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │   │   │   │   ├── quote v1.0.40 default,proc-macro (*)
+│   │   │   │   │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   └── winnow v0.6.26 alloc,default,simd,std
+│   │   │   │       └── memchr v2.7.5 alloc,default,std
+│   │   │   ├── gix-ref v0.41.0  (*)
+│   │   │   ├── gix-refspec v0.22.0 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-revision v0.26.0 describe
+│   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   │   ├── gix-hashtable v0.5.2  (*)
+│   │   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   │   ├── gix-revwalk v0.12.0  (*)
+│   │   │   │   │   ├── gix-trace v0.1.13 default
+│   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   ├── gix-validate v0.8.5  (*)
+│   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-revision v0.26.0 describe (*)
+│   │   │   ├── gix-revwalk v0.12.0  (*)
+│   │   │   ├── gix-sec v0.10.12  (*)
+│   │   │   ├── gix-submodule v0.8.0 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-config v0.34.0  (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-pathspec v0.6.0  (*)
+│   │   │   │   ├── gix-refspec v0.22.0  (*)
+│   │   │   │   ├── gix-url v0.27.5  (*)
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-tempfile v13.1.1  (*)
+│   │   │   ├── gix-trace v0.1.13 default
+│   │   │   ├── gix-transport v0.41.2 base64,blocking-client,default,gix-credentials,http-client,http-client-reqwest,reqwest (*)
+│   │   │   ├── gix-traverse v0.37.0  (*)
+│   │   │   ├── gix-url v0.27.5  (*)
+│   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   ├── gix-validate v0.8.5  (*)
+│   │   │   ├── gix-worktree v0.30.0 attributes
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-attributes v0.22.5  (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-fs v0.10.2  (*)
+│   │   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-ignore v0.11.4  (*)
+│   │   │   │   ├── gix-index v0.29.0  (*)
+│   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   └── gix-path v0.10.20  (*)
+│   │   │   ├── gix-worktree-state v0.7.0 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-filter v0.9.0  (*)
+│   │   │   │   ├── gix-fs v0.10.2  (*)
+│   │   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-index v0.29.0  (*)
+│   │   │   │   ├── gix-object v0.41.0  (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-worktree v0.30.0 attributes (*)
+│   │   │   │   ├── io-close v0.3.7 
+│   │   │   │   │   └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   ├── parking_lot v0.12.4 default (*)
+│   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── home v0.5.11 
+│   │   ├── platforms v3.6.0 default,serde,std
+│   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── semver v1.0.27 default,serde,std (*)
+│   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── tame-index v0.9.7 git,native-certs,sparse
+│   │   │   ├── camino v1.2.0 serde1
+│   │   │   │   └── serde_core v1.0.226 alloc,default,rc,result,std
+│   │   │   ├── crossbeam-channel v0.5.15 default,std (*)
+│   │   │   ├── gix v0.58.0 attributes,blocking-http-transport-reqwest,blocking-network-client,command,credentials,excludes,gix-protocol,gix-transport,index,max-control,max-performance-safe,pack-cache-lru-dynamic,pack-cache-lru-static,parallel,parallel-walkdir,revision,worktree-mutation (*)
+│   │   │   ├── home v0.5.11 
+│   │   │   ├── http v0.2.12  (*)
+│   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   ├── memchr v2.7.5 alloc,default,std
+│   │   │   ├── rayon v1.11.0  (*)
+│   │   │   ├── reqwest v0.11.27 __rustls,__tls,async-compression,blocking,gzip,hyper-rustls,rustls,rustls-native-certs,rustls-tls-native-roots,tokio-rustls,tokio-util (*)
+│   │   │   ├── semver v1.0.27 default,serde,std (*)
+│   │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   ├── serde_json v1.0.145 default,std,unbounded_depth (*)
+│   │   │   ├── smol_str v0.2.2 default,serde,std
+│   │   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   ├── toml-span v0.2.1 reporting
+│   │   │   │   ├── codespan-reporting v0.11.1 serde,serialization
+│   │   │   │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │   ├── termcolor v1.4.1 
+│   │   │   │   │   └── unicode-width v0.1.14 cjk,default
+│   │   │   │   └── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   └── twox-hash v1.6.3 
+│   │   │       ├── cfg-if v1.0.3 
+│   │   │       └── static_assertions v1.1.0 
+│   │   ├── thiserror v1.0.69  (*)
+│   │   ├── time v0.3.44 alloc,formatting,local-offset,macros,parsing,serde,std (*)
+│   │   ├── toml v0.7.8 default,display,parse (*)
+│   │   └── url v2.5.7 default,serde,std (*)
+│   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   ├── serde_json v1.0.145 default,std,unbounded_depth (*)
+│   └── thiserror v1.0.69  (*)
+├── cargo-deny v0.14.24 default
+│   ├── anyhow v1.0.100 default,std
+│   ├── askalono v0.4.6 
+│   │   ├── anyhow v1.0.100 default,std
+│   │   ├── lazy_static v1.5.0 
+│   │   ├── log v0.4.28 std
+│   │   ├── rayon v1.11.0  (*)
+│   │   ├── regex v1.11.2 default,perf,perf-backtrack,perf-cache,perf-dfa,perf-inline,perf-literal,perf-onepass,std,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment (*)
+│   │   ├── rmp-serde v0.14.4 
+│   │   │   ├── byteorder v1.5.0 default,std
+│   │   │   ├── rmp v0.8.14 default,std
+│   │   │   │   ├── byteorder v1.5.0 default,std
+│   │   │   │   ├── num-traits v0.2.19 std (*)
+│   │   │   │   └── paste v1.0.15 (proc-macro) 
+│   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── unicode-normalization v0.1.24 default,std (*)
+│   │   └── zstd v0.11.2+zstd.1.5.2 arrays,default,legacy,zdict_builder
+│   │       └── zstd-safe v5.0.2+zstd.1.5.2 arrays,legacy,std,zdict_builder
+│   │           ├── libc v0.2.175 default,extra_traits,std
+│   │           └── zstd-sys v2.0.16+zstd.1.5.7 legacy,std,zdict_builder
+│   │               [build-dependencies]
+│   │               ├── cc v1.2.38 parallel (*)
+│   │               └── pkg-config v0.3.32 
+│   ├── bitvec v1.0.1 alloc,atomic,default,std
+│   │   ├── funty v2.0.0 
+│   │   ├── radium v0.7.0 
+│   │   ├── tap v1.0.1 
+│   │   └── wyz v0.5.1 
+│   │       └── tap v1.0.1 
+│   ├── camino v1.2.0 serde1 (*)
+│   ├── clap v4.5.48 color,default,derive,env,error-context,help,std,suggestions,usage
+│   │   ├── clap_builder v4.5.48 color,env,error-context,help,std,suggestions,usage
+│   │   │   ├── anstream v0.6.20 auto,default,wincon
+│   │   │   │   ├── anstyle v1.0.11 default,std
+│   │   │   │   ├── anstyle-parse v0.2.7 default,utf8
+│   │   │   │   │   └── utf8parse v0.2.2 default
+│   │   │   │   ├── anstyle-query v1.1.4 
+│   │   │   │   ├── colorchoice v1.0.4 
+│   │   │   │   ├── is_terminal_polyfill v1.70.1 default
+│   │   │   │   └── utf8parse v0.2.2 default
+│   │   │   ├── anstyle v1.0.11 default,std
+│   │   │   ├── clap_lex v0.7.5 
+│   │   │   └── strsim v0.11.1 
+│   │   └── clap_derive v4.5.47 (proc-macro) default
+│   │       ├── heck v0.5.0 
+│   │       ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │       ├── quote v1.0.40 default,proc-macro (*)
+│   │       └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   ├── codespan v0.11.1 serde,serialization
+│   │   ├── codespan-reporting v0.11.1 serde,serialization (*)
+│   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   ├── codespan-reporting v0.11.1 serde,serialization (*)
+│   ├── crossbeam v0.8.4 alloc,crossbeam-channel,crossbeam-deque,crossbeam-epoch,crossbeam-queue,default,std (*)
+│   ├── fern v0.6.2 
+│   │   └── log v0.4.28 std
+│   ├── gix v0.63.0 attributes,blocking-http-transport-reqwest,blocking-network-client,command,credentials,excludes,gix-protocol,gix-transport,index,interrupt,worktree-mutation
+│   │   ├── gix-actor v0.31.5 
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   ├── itoa v1.0.15 
+│   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   └── winnow v0.6.26 alloc,default,simd,std (*)
+│   │   ├── gix-attributes v0.22.5  (*)
+│   │   ├── gix-command v0.3.11  (*)
+│   │   ├── gix-commitgraph v0.24.3  (*)
+│   │   ├── gix-config v0.37.0 
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-config-value v0.14.12  (*)
+│   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   ├── gix-ref v0.44.1 
+│   │   │   │   ├── gix-actor v0.31.5  (*)
+│   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-fs v0.11.3 
+│   │   │   │   │   ├── fastrand v2.3.0 alloc,default,std
+│   │   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   │   └── gix-utils v0.1.14  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-lock v14.0.0 
+│   │   │   │   │   ├── gix-tempfile v14.0.2 signals
+│   │   │   │   │   │   ├── gix-fs v0.11.3  (*)
+│   │   │   │   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   │   │   │   ├── parking_lot v0.12.4 default (*)
+│   │   │   │   │   │   ├── signal-hook v0.3.18 
+│   │   │   │   │   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │   └── signal-hook-registry v1.4.6  (*)
+│   │   │   │   │   │   ├── signal-hook-registry v1.4.6  (*)
+│   │   │   │   │   │   └── tempfile v3.22.0 default,getrandom (*)
+│   │   │   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   ├── gix-object v0.42.3 
+│   │   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   │   ├── gix-actor v0.31.5  (*)
+│   │   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   │   │   ├── gix-validate v0.8.5  (*)
+│   │   │   │   │   ├── itoa v1.0.15 
+│   │   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   │   └── winnow v0.6.26 alloc,default,simd,std (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-tempfile v14.0.2 signals (*)
+│   │   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   │   ├── gix-validate v0.8.5  (*)
+│   │   │   │   ├── memmap2 v0.9.8  (*)
+│   │   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   │   └── winnow v0.6.26 alloc,default,simd,std (*)
+│   │   │   ├── gix-sec v0.10.12  (*)
+│   │   │   ├── memchr v2.7.5 alloc,default,std
+│   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   ├── unicode-bom v2.0.3 
+│   │   │   └── winnow v0.6.26 alloc,default,simd,std (*)
+│   │   ├── gix-credentials v0.24.5  (*)
+│   │   ├── gix-date v0.8.7  (*)
+│   │   ├── gix-diff v0.44.1 
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── gix-discover v0.32.0 
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-fs v0.11.3  (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   ├── gix-ref v0.44.1  (*)
+│   │   │   ├── gix-sec v0.10.12  (*)
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   ├── gix-filter v0.11.3 
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── encoding_rs v0.8.35 alloc,default (*)
+│   │   │   ├── gix-attributes v0.22.5  (*)
+│   │   │   ├── gix-command v0.3.11  (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   ├── gix-packetline-blocking v0.17.5 blocking-io,default (*)
+│   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   ├── gix-quote v0.4.15  (*)
+│   │   │   ├── gix-trace v0.1.13 default
+│   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── gix-fs v0.11.3  (*)
+│   │   ├── gix-glob v0.16.5  (*)
+│   │   ├── gix-hash v0.14.2  (*)
+│   │   ├── gix-hashtable v0.5.2  (*)
+│   │   ├── gix-ignore v0.11.4  (*)
+│   │   ├── gix-index v0.33.1 
+│   │   │   ├── bitflags v2.9.4 std
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── filetime v0.2.26  (*)
+│   │   │   ├── fnv v1.0.7 default,std
+│   │   │   ├── gix-bitmap v0.2.14  (*)
+│   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   ├── gix-fs v0.11.3  (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-lock v14.0.0  (*)
+│   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   ├── gix-traverse v0.39.2 
+│   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   ├── gix-commitgraph v0.24.3  (*)
+│   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-hashtable v0.5.2  (*)
+│   │   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   │   ├── gix-revwalk v0.13.2 
+│   │   │   │   │   ├── gix-commitgraph v0.24.3  (*)
+│   │   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   │   ├── gix-hashtable v0.5.2  (*)
+│   │   │   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   ├── gix-validate v0.8.5  (*)
+│   │   │   ├── hashbrown v0.14.5 ahash,allocator-api2,default,inline-more,raw (*)
+│   │   │   ├── itoa v1.0.15 
+│   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   ├── memmap2 v0.9.8  (*)
+│   │   │   ├── rustix v0.38.44 alloc,default,fs,libc-extra-traits,std,termios,use-libc-auxv (*)
+│   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── gix-lock v14.0.0  (*)
+│   │   ├── gix-macros v0.1.5 (proc-macro)  (*)
+│   │   ├── gix-negotiate v0.13.2 
+│   │   │   ├── bitflags v2.9.4 std
+│   │   │   ├── gix-commitgraph v0.24.3  (*)
+│   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   ├── gix-revwalk v0.13.2  (*)
+│   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── gix-object v0.42.3  (*)
+│   │   ├── gix-odb v0.61.1 
+│   │   │   ├── arc-swap v1.7.1 
+│   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   ├── gix-fs v0.11.3  (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   ├── gix-pack v0.51.1 object-cache-dynamic,streaming-input
+│   │   │   │   ├── clru v0.6.2 
+│   │   │   │   ├── gix-chunk v0.4.11  (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-hashtable v0.5.2  (*)
+│   │   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   │   ├── gix-tempfile v14.0.2 signals (*)
+│   │   │   │   ├── memmap2 v0.9.8  (*)
+│   │   │   │   ├── parking_lot v0.12.4 default (*)
+│   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   ├── gix-quote v0.4.15  (*)
+│   │   │   ├── parking_lot v0.12.4 default (*)
+│   │   │   ├── tempfile v3.22.0 default,getrandom (*)
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── gix-pack v0.51.1 object-cache-dynamic,streaming-input (*)
+│   │   ├── gix-path v0.10.20  (*)
+│   │   ├── gix-pathspec v0.7.7 
+│   │   │   ├── bitflags v2.9.4 std
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-attributes v0.22.5  (*)
+│   │   │   ├── gix-config-value v0.14.12  (*)
+│   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── gix-prompt v0.8.9  (*)
+│   │   ├── gix-protocol v0.45.3 blocking-client
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-credentials v0.24.5  (*)
+│   │   │   ├── gix-date v0.9.4 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── itoa v1.0.15 
+│   │   │   │   ├── jiff v0.2.15 alloc,default,perf-inline,std,tz-fat,tz-system,tzdb-bundle-platform,tzdb-concatenated,tzdb-zoneinfo
+│   │   │   │   └── thiserror v2.0.16 default,std (*)
+│   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-transport v0.42.3 base64,blocking-client,default,gix-credentials,http-client,http-client-reqwest,reqwest
+│   │   │   │   ├── base64 v0.22.1 alloc,default,std
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-command v0.3.11  (*)
+│   │   │   │   ├── gix-credentials v0.24.5  (*)
+│   │   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   │   ├── gix-packetline v0.17.6 blocking-io,default (*)
+│   │   │   │   ├── gix-quote v0.4.15  (*)
+│   │   │   │   ├── gix-sec v0.10.12  (*)
+│   │   │   │   ├── gix-url v0.27.5  (*)
+│   │   │   │   ├── reqwest v0.12.23 __rustls,__rustls-ring,__tls,blocking,charset,gzip,h2,http2,macos-system-configuration,rustls-tls-webpki-roots,rustls-tls-webpki-roots-no-provider,system-proxy
+│   │   │   │   │   ├── async-compression v0.4.30 gzip,tokio (*)
+│   │   │   │   │   ├── base64 v0.22.1 alloc,default,std
+│   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   ├── encoding_rs v0.8.35 alloc,default (*)
+│   │   │   │   │   ├── futures-channel v0.3.31 alloc,default,futures-sink,sink,std (*)
+│   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   ├── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std (*)
+│   │   │   │   │   ├── h2 v0.4.12 
+│   │   │   │   │   │   ├── atomic-waker v1.1.2 
+│   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   ├── fnv v1.0.7 default,std
+│   │   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   │   ├── futures-sink v0.3.31 alloc,default,std
+│   │   │   │   │   │   ├── http v1.3.1 default,std
+│   │   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   │   ├── fnv v1.0.7 default,std
+│   │   │   │   │   │   │   └── itoa v1.0.15 
+│   │   │   │   │   │   ├── indexmap v2.11.4 default,std (*)
+│   │   │   │   │   │   ├── slab v0.4.11 default,std
+│   │   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   ├── tokio-util v0.7.16 codec,default,io (*)
+│   │   │   │   │   │   └── tracing v0.1.41 attributes,default,std,tracing-attributes (*)
+│   │   │   │   │   ├── http v1.3.1 default,std (*)
+│   │   │   │   │   ├── http-body v1.0.1 
+│   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   └── http v1.3.1 default,std (*)
+│   │   │   │   │   ├── http-body-util v0.1.3 default
+│   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   │   ├── http v1.3.1 default,std (*)
+│   │   │   │   │   │   ├── http-body v1.0.1  (*)
+│   │   │   │   │   │   └── pin-project-lite v0.2.16 
+│   │   │   │   │   ├── hyper v1.7.0 client,default,http1,http2
+│   │   │   │   │   │   ├── atomic-waker v1.1.2 
+│   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   ├── futures-channel v0.3.31 alloc,default,futures-sink,sink,std (*)
+│   │   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   │   ├── h2 v0.4.12  (*)
+│   │   │   │   │   │   ├── http v1.3.1 default,std (*)
+│   │   │   │   │   │   ├── http-body v1.0.1  (*)
+│   │   │   │   │   │   ├── httparse v1.10.1 default,std
+│   │   │   │   │   │   ├── itoa v1.0.15 
+│   │   │   │   │   │   ├── pin-project-lite v0.2.16 
+│   │   │   │   │   │   ├── pin-utils v0.1.0 
+│   │   │   │   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   └── want v0.3.1  (*)
+│   │   │   │   │   ├── hyper-rustls v0.27.7 http1,http2,ring,tls12,webpki-roots,webpki-tokio
+│   │   │   │   │   │   ├── http v1.3.1 default,std (*)
+│   │   │   │   │   │   ├── hyper v1.7.0 client,default,http1,http2 (*)
+│   │   │   │   │   │   ├── hyper-util v0.1.17 client,client-legacy,client-proxy,client-proxy-system,default,http1,http2,tokio
+│   │   │   │   │   │   │   ├── base64 v0.22.1 alloc,default,std
+│   │   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   │   ├── futures-channel v0.3.31 alloc,default,futures-sink,sink,std (*)
+│   │   │   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   │   │   ├── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std (*)
+│   │   │   │   │   │   │   ├── http v1.3.1 default,std (*)
+│   │   │   │   │   │   │   ├── http-body v1.0.1  (*)
+│   │   │   │   │   │   │   ├── hyper v1.7.0 client,default,http1,http2 (*)
+│   │   │   │   │   │   │   ├── ipnet v2.11.0 default,std
+│   │   │   │   │   │   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │   ├── percent-encoding v2.3.2 alloc,default,std
+│   │   │   │   │   │   │   ├── pin-project-lite v0.2.16 
+│   │   │   │   │   │   │   ├── socket2 v0.6.0 all (*)
+│   │   │   │   │   │   │   ├── system-configuration v0.6.1 
+│   │   │   │   │   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   │   │   │   │   ├── core-foundation v0.9.4 default,link (*)
+│   │   │   │   │   │   │   │   └── system-configuration-sys v0.6.0 
+│   │   │   │   │   │   │   │       ├── core-foundation-sys v0.8.7 default,link
+│   │   │   │   │   │   │   │       └── libc v0.2.175 default,extra_traits,std
+│   │   │   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   │   ├── tower-service v0.3.3 
+│   │   │   │   │   │   │   └── tracing v0.1.41 attributes,default,std,tracing-attributes (*)
+│   │   │   │   │   │   ├── rustls v0.23.32 ring,std,tls12
+│   │   │   │   │   │   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   │   │   │   │   │   ├── ring v0.17.14 alloc,default,dev_urandom_fallback (*)
+│   │   │   │   │   │   │   ├── rustls-pki-types v1.12.0 alloc,default,std
+│   │   │   │   │   │   │   │   └── zeroize v1.8.1 alloc,default
+│   │   │   │   │   │   │   ├── rustls-webpki v0.103.6 alloc,ring,std
+│   │   │   │   │   │   │   │   ├── ring v0.17.14 alloc,default,dev_urandom_fallback (*)
+│   │   │   │   │   │   │   │   ├── rustls-pki-types v1.12.0 alloc,default,std (*)
+│   │   │   │   │   │   │   │   └── untrusted v0.9.0 
+│   │   │   │   │   │   │   ├── subtle v2.6.1 
+│   │   │   │   │   │   │   └── zeroize v1.8.1 alloc,default
+│   │   │   │   │   │   ├── rustls-pki-types v1.12.0 alloc,default,std (*)
+│   │   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   ├── tokio-rustls v0.26.3 ring,tls12
+│   │   │   │   │   │   │   ├── rustls v0.23.32 ring,std,tls12 (*)
+│   │   │   │   │   │   │   └── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   ├── tower-service v0.3.3 
+│   │   │   │   │   │   └── webpki-roots v1.0.2 
+│   │   │   │   │   │       └── rustls-pki-types v1.12.0 alloc,default,std (*)
+│   │   │   │   │   ├── hyper-util v0.1.17 client,client-legacy,client-proxy,client-proxy-system,default,http1,http2,tokio (*)
+│   │   │   │   │   ├── log v0.4.28 std
+│   │   │   │   │   ├── mime v0.3.17 
+│   │   │   │   │   ├── percent-encoding v2.3.2 alloc,default,std
+│   │   │   │   │   ├── pin-project-lite v0.2.16 
+│   │   │   │   │   ├── rustls v0.23.32 ring,std,tls12 (*)
+│   │   │   │   │   ├── rustls-pki-types v1.12.0 alloc,default,std (*)
+│   │   │   │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   │   │   ├── serde_urlencoded v0.7.1  (*)
+│   │   │   │   │   ├── sync_wrapper v1.0.2 futures,futures-core
+│   │   │   │   │   │   └── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   ├── tokio-rustls v0.26.3 ring,tls12 (*)
+│   │   │   │   │   ├── tokio-util v0.7.16 codec,default,io (*)
+│   │   │   │   │   ├── tower v0.5.2 __common,futures-core,futures-util,pin-project-lite,retry,sync_wrapper,timeout,tokio,util
+│   │   │   │   │   │   ├── futures-core v0.3.31 alloc,default,std
+│   │   │   │   │   │   ├── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std (*)
+│   │   │   │   │   │   ├── pin-project-lite v0.2.16 
+│   │   │   │   │   │   ├── sync_wrapper v1.0.2 futures,futures-core (*)
+│   │   │   │   │   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   │   │   │   │   ├── tower-layer v0.3.3 
+│   │   │   │   │   │   └── tower-service v0.3.3 
+│   │   │   │   │   ├── tower-http v0.6.6 follow-redirect,futures-util,iri-string,tower
+│   │   │   │   │   │   ├── bitflags v2.9.4 std
+│   │   │   │   │   │   ├── bytes v1.10.1 default,std
+│   │   │   │   │   │   ├── futures-util v0.3.31 alloc,async-await,async-await-macro,channel,futures-channel,futures-io,futures-macro,futures-sink,io,memchr,sink,slab,std (*)
+│   │   │   │   │   │   ├── http v1.3.1 default,std (*)
+│   │   │   │   │   │   ├── http-body v1.0.1  (*)
+│   │   │   │   │   │   ├── iri-string v0.7.8 alloc,default,std
+│   │   │   │   │   │   ├── pin-project-lite v0.2.16 
+│   │   │   │   │   │   ├── tower v0.5.2 __common,futures-core,futures-util,pin-project-lite,retry,sync_wrapper,timeout,tokio,util (*)
+│   │   │   │   │   │   ├── tower-layer v0.3.3 
+│   │   │   │   │   │   └── tower-service v0.3.3 
+│   │   │   │   │   ├── tower-service v0.3.3 
+│   │   │   │   │   ├── url v2.5.7 default,serde,std (*)
+│   │   │   │   │   └── webpki-roots v1.0.2  (*)
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-utils v0.1.14  (*)
+│   │   │   ├── maybe-async v0.2.10 (proc-macro) default,is_sync (*)
+│   │   │   ├── thiserror v1.0.69  (*)
+│   │   │   └── winnow v0.6.26 alloc,default,simd,std (*)
+│   │   ├── gix-ref v0.44.1  (*)
+│   │   ├── gix-refspec v0.23.1 
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-revision v0.27.2 
+│   │   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   │   ├── gix-date v0.8.7  (*)
+│   │   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   │   ├── gix-revwalk v0.13.2  (*)
+│   │   │   │   └── thiserror v1.0.69  (*)
+│   │   │   ├── gix-validate v0.8.5  (*)
+│   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── gix-revision v0.27.2  (*)
+│   │   ├── gix-revwalk v0.13.2  (*)
+│   │   ├── gix-sec v0.10.12  (*)
+│   │   ├── gix-submodule v0.11.0 
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-config v0.37.0  (*)
+│   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   ├── gix-pathspec v0.7.7  (*)
+│   │   │   ├── gix-refspec v0.23.1  (*)
+│   │   │   ├── gix-url v0.27.5  (*)
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── gix-tempfile v14.0.2 signals (*)
+│   │   ├── gix-trace v0.1.13 default
+│   │   ├── gix-transport v0.42.3 base64,blocking-client,default,gix-credentials,http-client,http-client-reqwest,reqwest (*)
+│   │   ├── gix-traverse v0.39.2  (*)
+│   │   ├── gix-url v0.27.5  (*)
+│   │   ├── gix-utils v0.1.14  (*)
+│   │   ├── gix-validate v0.8.5  (*)
+│   │   ├── gix-worktree v0.34.1 attributes
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-attributes v0.22.5  (*)
+│   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   ├── gix-fs v0.11.3  (*)
+│   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-ignore v0.11.4  (*)
+│   │   │   ├── gix-index v0.33.1  (*)
+│   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   └── gix-validate v0.8.5  (*)
+│   │   ├── gix-worktree-state v0.11.1 
+│   │   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   │   ├── gix-features v0.38.2 crc32,default,fs-read-dir,fs-walkdir-parallel,io-pipe,once_cell,parallel,prodash,progress,rustsha1,walkdir,zlib (*)
+│   │   │   ├── gix-filter v0.11.3  (*)
+│   │   │   ├── gix-fs v0.11.3  (*)
+│   │   │   ├── gix-glob v0.16.5  (*)
+│   │   │   ├── gix-hash v0.14.2  (*)
+│   │   │   ├── gix-index v0.33.1  (*)
+│   │   │   ├── gix-object v0.42.3  (*)
+│   │   │   ├── gix-path v0.10.20  (*)
+│   │   │   ├── gix-worktree v0.34.1 attributes (*)
+│   │   │   ├── io-close v0.3.7  (*)
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── once_cell v1.21.3 alloc,default,race,std
+│   │   ├── parking_lot v0.12.4 default (*)
+│   │   ├── signal-hook v0.3.18  (*)
+│   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   └── thiserror v1.0.69  (*)
+│   ├── globset v0.4.16 default,log
+│   │   ├── aho-corasick v1.1.3 default,perf-literal,std (*)
+│   │   ├── bstr v1.12.0 alloc,std,unicode (*)
+│   │   ├── log v0.4.28 std
+│   │   ├── regex-automata v0.4.10 alloc,dfa-build,dfa-onepass,dfa-search,hybrid,meta,nfa,nfa-backtrack,nfa-pikevm,nfa-thompson,perf,perf-inline,perf-literal,perf-literal-multisubstring,perf-literal-substring,std,syntax,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment,unicode-word-boundary (*)
+│   │   └── regex-syntax v0.8.6 default,std,unicode,unicode-age,unicode-bool,unicode-case,unicode-gencat,unicode-perl,unicode-script,unicode-segment
+│   ├── goblin v0.8.2 alloc,archive,elf32,elf64,endian_fd,log,mach32,mach64,pe32,pe64
+│   │   ├── log v0.4.28 std
+│   │   ├── plain v0.2.3 
+│   │   └── scroll v0.12.0 derive
+│   │       └── scroll_derive v0.12.1 (proc-macro) 
+│   │           ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │           ├── quote v1.0.40 default,proc-macro (*)
+│   │           └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   ├── home v0.5.11 
+│   ├── krates v0.16.10 default,targets
+│   │   ├── cargo-platform v0.1.9 
+│   │   │   └── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── cargo_metadata v0.18.1 default
+│   │   │   ├── camino v1.2.0 serde1 (*)
+│   │   │   ├── cargo-platform v0.1.9  (*)
+│   │   │   ├── semver v1.0.27 default,serde,std (*)
+│   │   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   │   ├── serde_json v1.0.145 default,std,unbounded_depth (*)
+│   │   │   └── thiserror v1.0.69  (*)
+│   │   ├── cfg-expr v0.15.8 default,target-lexicon,targets
+│   │   │   ├── smallvec v1.15.1 const_generics,const_new,write
+│   │   │   └── target-lexicon v0.12.16 default
+│   │   ├── petgraph v0.6.5 default,graphmap,matrix_graph,stable_graph (*)
+│   │   └── semver v1.0.27 default,serde,std (*)
+│   ├── log v0.4.28 std
+│   ├── nu-ansi-term v0.50.1 
+│   ├── parking_lot v0.12.4 default (*)
+│   ├── rayon v1.11.0  (*)
+│   ├── reqwest v0.12.23 __rustls,__rustls-ring,__tls,blocking,charset,gzip,h2,http2,macos-system-configuration,rustls-tls-webpki-roots,rustls-tls-webpki-roots-no-provider,system-proxy (*)
+│   ├── ring v0.17.14 alloc,default,dev_urandom_fallback (*)
+│   ├── rustsec v0.29.3 
+│   │   ├── cargo-lock v9.0.0 dependency-tree,petgraph (*)
+│   │   ├── cvss v2.1.1 default,serde,std,v3,v4 (*)
+│   │   ├── fs-err v2.11.0  (*)
+│   │   ├── platforms v3.6.0 default,serde,std (*)
+│   │   ├── semver v1.0.27 default,serde,std (*)
+│   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── thiserror v1.0.69  (*)
+│   │   ├── toml v0.7.8 default,display,parse (*)
+│   │   └── url v2.5.7 default,serde,std (*)
+│   ├── semver v1.0.27 default,serde,std (*)
+│   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   ├── serde_json v1.0.145 default,std,unbounded_depth (*)
+│   ├── smallvec v1.15.1 const_generics,const_new,write
+│   ├── spdx v0.10.9 
+│   │   └── smallvec v1.15.1 const_generics,const_new,write
+│   ├── strum v0.26.3 default,derive,std,strum_macros
+│   │   └── strum_macros v0.26.4 (proc-macro) 
+│   │       ├── heck v0.5.0 
+│   │       ├── proc-macro2 v1.0.101 default,proc-macro (*)
+│   │       ├── quote v1.0.40 default,proc-macro (*)
+│   │       ├── rustversion v1.0.22 (proc-macro) 
+│   │       └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+│   ├── tame-index v0.12.2 __git,default,git,gix,gix-reqwest,sparse
+│   │   ├── camino v1.2.0 serde1 (*)
+│   │   ├── crossbeam-channel v0.5.15 default,std (*)
+│   │   ├── gix v0.63.0 attributes,blocking-http-transport-reqwest,blocking-network-client,command,credentials,excludes,gix-protocol,gix-transport,index,interrupt,worktree-mutation (*)
+│   │   ├── home v0.5.11 
+│   │   ├── http v1.3.1 default,std (*)
+│   │   ├── libc v0.2.175 default,extra_traits,std
+│   │   ├── memchr v2.7.5 alloc,default,std
+│   │   ├── rayon v1.11.0  (*)
+│   │   ├── reqwest v0.12.23 __rustls,__rustls-ring,__tls,blocking,charset,gzip,h2,http2,macos-system-configuration,rustls-tls-webpki-roots,rustls-tls-webpki-roots-no-provider,system-proxy (*)
+│   │   ├── semver v1.0.27 default,serde,std (*)
+│   │   ├── serde v1.0.226 alloc,default,derive,rc,serde_derive,std (*)
+│   │   ├── serde_json v1.0.145 default,std,unbounded_depth (*)
+│   │   ├── smol_str v0.2.2 default,serde,std (*)
+│   │   ├── thiserror v1.0.69  (*)
+│   │   ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+│   │   ├── toml-span v0.3.0 
+│   │   │   └── smallvec v1.15.1 const_generics,const_new,write
+│   │   └── twox-hash v1.6.3  (*)
+│   ├── time v0.3.44 alloc,formatting,local-offset,macros,parsing,serde,std (*)
+│   ├── toml-span v0.2.1 reporting (*)
+│   ├── twox-hash v1.6.3  (*)
+│   ├── url v2.5.7 default,serde,std (*)
+│   └── walkdir v2.5.0  (*)
+└── tokio-test v0.4.4 
+    ├── async-stream v0.3.6 
+    │   ├── async-stream-impl v0.3.6 (proc-macro) 
+    │   │   ├── proc-macro2 v1.0.101 default,proc-macro (*)
+    │   │   ├── quote v1.0.40 default,proc-macro (*)
+    │   │   └── syn v2.0.106 clone-impls,default,derive,extra-traits,fold,full,parsing,printing,proc-macro,visit,visit-mut (*)
+    │   ├── futures-core v0.3.31 alloc,default,std
+    │   └── pin-project-lite v0.2.16 
+    ├── bytes v1.10.1 default,std
+    ├── futures-core v0.3.31 alloc,default,std
+    ├── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)
+    └── tokio-stream v0.1.17 default,time
+        ├── futures-core v0.3.31 alloc,default,std
+        ├── pin-project-lite v0.2.16 
+        └── tokio v1.47.1 bytes,default,fs,full,io-std,io-util,libc,macros,mio,net,parking_lot,process,rt,rt-multi-thread,signal,signal-hook-registry,socket2,sync,test-util,time,tokio-macros (*)

@@ -1,0 +1,38 @@
+Software Bill of Materials (SBOM) Summary
+=========================================
+
+Generated: 2025-09-22 03:47:41 UTC
+Project: MCP Server - Meal Prep (Rust)
+Version: 1.0.0
+Author: Jin Wen <jin.wen@hisgarden.org>
+License: MIT
+
+Dependencies:
+1520 total dependencies
+
+Security Status:
+Crate:     gix-features
+Version:   0.38.2
+Title:     SHA-1 collision attacks are not detected
+Date:      2025-04-03
+ID:        RUSTSEC-2025-0021
+Security audit completed
+
+License Compliance:
+error: unexpected argument '--quiet' found
+
+  tip: to pass '--quiet' as a value, use '-- --quiet'
+
+Usage: cargo-deny check <WHICH>...
+License check completed
+
+Files Generated:
+- target/release/mcp-server-meal-prep (auditable binary)
+- sbom/dependency-tree.txt (Dependency tree)
+- sbom/license-report.txt (License compliance report)
+- sbom/security-audit.txt (Security audit report)
+- sbom/sbom-summary.txt (Human-readable summary)
+
+Binary Information:
+- Size: 1.6M
+- SHA256: be06f3ed6cd525076f9ed894648aeb390cebc591f77d4bbf88d8e9d45e0f284a

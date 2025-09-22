@@ -1,0 +1,48 @@
+[advisories]
+# Security advisory database configuration
+db-path = "~/.cargo/advisory-db"
+db-urls = ["https://github.com/RustSec/advisory-db"]
+query-source = "remote"
+vulnerability = "deny"
+unmaintained = "warn"
+notice = "warn"
+ignore = []
+
+[licenses]
+# License compliance configuration
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "Unicode-DFS-2016",
+]
+deny = [
+    "GPL-2.0",
+    "GPL-3.0",
+    "AGPL-3.0",
+    "LGPL-2.0",
+    "LGPL-2.1",
+    "LGPL-3.0",
+]
+copyleft = "deny"
+allow-osi-fsf-free = "neither"
+default = "deny"
+confidence-threshold = 0.8
+unknown = "deny"
+
+[bans]
+# Dependency ban configuration
+multiple-versions = "warn"
+wildcards = "deny"
+highlight = "all"
+workspace = true
+exclude-version-reqs = []
+
+[sources]
+# Source configuration
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+allow-git = []

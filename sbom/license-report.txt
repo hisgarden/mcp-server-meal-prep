@@ -1,0 +1,27 @@
+error[unexpected-value]: expected '["all", "workspace", "transitive", "none"]'
+  ┌─ /Users/jwen/workspace/ml/MCP/mcp-server-meal-prep/deny.toml:7:17
+  │
+7 │ unmaintained = "warn"
+  │                 ━━━━ unexpected value
+
+error[unexpected-keys]: found 1 unexpected keys, expected: ["version", "db-path", "db-urls", "vulnerability", "unsound", "notice", "unmaintained", "yanked", "ignore", "severity-threshold", "git-fetch-with-cli", "disable-yank-checking", "maximum-db-staleness"]
+  ┌─ /Users/jwen/workspace/ml/MCP/mcp-server-meal-prep/deny.toml:5:1
+  │
+5 │ query-source = "remote"
+  │ ────────────
+
+error[unexpected-keys]: found 2 unexpected keys, expected: ["multiple-versions", "multiple-versions-include-dev", "highlight", "deny", "allow", "features", "external-default-features", "workspace-default-features", "skip", "skip-tree", "wildcards", "allow-wildcard-paths", "allow-build-scripts", "build", "workspace-dependencies"]
+   ┌─ /Users/jwen/workspace/ml/MCP/mcp-server-meal-prep/deny.toml:40:1
+   │
+40 │ workspace = true
+   │ ─────────
+41 │ exclude-version-reqs = []
+   │ ────────────────────
+
+error[unexpected-keys]: found 1 unexpected keys, expected: ["version", "private", "unlicensed", "allow-osi-fsf-free", "copyleft", "default", "confidence-threshold", "deny", "allow", "unused-allowed-license", "clarify", "exceptions", "include-dev"]
+   ┌─ /Users/jwen/workspace/ml/MCP/mcp-server-meal-prep/deny.toml:33:1
+   │
+33 │ unknown = "deny"
+   │ ───────
+
+2025-09-22 03:47:40 [ERROR] failed to deserialize config from '/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep/deny.toml'

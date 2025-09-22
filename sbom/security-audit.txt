@@ -1,0 +1,487 @@
+    Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
+      Loaded 819 security advisories (from /Users/jwen/.cargo/advisory-db)
+    Updating crates.io index
+    Scanning Cargo.lock for vulnerabilities (509 crate dependencies)
+Crate:     gix-features
+Version:   0.38.2
+Title:     SHA-1 collision attacks are not detected
+Date:      2025-04-03
+ID:        RUSTSEC-2025-0021
+URL:       https://rustsec.org/advisories/RUSTSEC-2025-0021
+Severity:  6.8 (medium)
+Solution:  Upgrade to >=0.41.0
+Dependency tree:
+gix-features 0.38.2
+├── gix-worktree-state 0.11.1
+│   └── gix 0.63.0
+│       ├── tame-index 0.12.2
+│       │   └── cargo-deny 0.14.24
+│       │       └── mcp-server-meal-prep 1.0.0
+│       └── cargo-deny 0.14.24
+├── gix-worktree-state 0.7.0
+│   └── gix 0.58.0
+│       ├── tame-index 0.9.7
+│       │   └── rustsec 0.28.6
+│       │       └── cargo-audit 0.18.3
+│       │           └── mcp-server-meal-prep 1.0.0
+│       └── rustsec 0.28.6
+├── gix-worktree 0.34.1
+│   ├── gix-worktree-state 0.11.1
+│   └── gix 0.63.0
+├── gix-worktree 0.30.0
+│   ├── gix-worktree-state 0.7.0
+│   └── gix 0.58.0
+├── gix-url 0.27.5
+│   ├── gix-transport 0.42.3
+│   │   ├── gix-protocol 0.45.3
+│   │   │   └── gix 0.63.0
+│   │   └── gix 0.63.0
+│   ├── gix-transport 0.41.2
+│   │   ├── gix-protocol 0.44.2
+│   │   │   └── gix 0.58.0
+│   │   └── gix 0.58.0
+│   ├── gix-submodule 0.11.0
+│   │   └── gix 0.63.0
+│   ├── gix-submodule 0.8.0
+│   │   └── gix 0.58.0
+│   ├── gix-credentials 0.24.5
+│   │   ├── gix-transport 0.42.3
+│   │   ├── gix-transport 0.41.2
+│   │   ├── gix-protocol 0.45.3
+│   │   ├── gix-protocol 0.44.2
+│   │   ├── gix 0.63.0
+│   │   └── gix 0.58.0
+│   ├── gix 0.63.0
+│   └── gix 0.58.0
+├── gix-transport 0.42.3
+├── gix-transport 0.41.2
+├── gix-ref 0.44.1
+│   ├── gix-discover 0.32.0
+│   │   └── gix 0.63.0
+│   ├── gix-config 0.37.0
+│   │   ├── gix-submodule 0.11.0
+│   │   └── gix 0.63.0
+│   └── gix 0.63.0
+├── gix-ref 0.41.0
+│   ├── gix-discover 0.29.0
+│   │   └── gix 0.58.0
+│   ├── gix-config 0.34.0
+│   │   ├── gix-submodule 0.8.0
+│   │   └── gix 0.58.0
+│   └── gix 0.58.0
+├── gix-protocol 0.45.3
+├── gix-protocol 0.44.2
+├── gix-pack 0.51.1
+│   ├── gix-odb 0.61.1
+│   │   └── gix 0.63.0
+│   └── gix 0.63.0
+├── gix-pack 0.47.0
+│   ├── gix-odb 0.57.0
+│   │   └── gix 0.58.0
+│   └── gix 0.58.0
+├── gix-odb 0.61.1
+├── gix-odb 0.57.0
+├── gix-object 0.42.3
+│   ├── gix-worktree-state 0.11.1
+│   ├── gix-worktree 0.34.1
+│   ├── gix-traverse 0.39.2
+│   │   ├── gix-index 0.33.1
+│   │   │   ├── gix-worktree-state 0.11.1
+│   │   │   ├── gix-worktree 0.34.1
+│   │   │   └── gix 0.63.0
+│   │   └── gix 0.63.0
+│   ├── gix-revwalk 0.13.2
+│   │   ├── gix-traverse 0.39.2
+│   │   ├── gix-revision 0.27.2
+│   │   │   ├── gix-refspec 0.23.1
+│   │   │   │   ├── gix-submodule 0.11.0
+│   │   │   │   └── gix 0.63.0
+│   │   │   └── gix 0.63.0
+│   │   ├── gix-negotiate 0.13.2
+│   │   │   └── gix 0.63.0
+│   │   └── gix 0.63.0
+│   ├── gix-revision 0.27.2
+│   ├── gix-ref 0.44.1
+│   ├── gix-pack 0.51.1
+│   ├── gix-odb 0.61.1
+│   ├── gix-negotiate 0.13.2
+│   ├── gix-index 0.33.1
+│   ├── gix-filter 0.11.3
+│   │   ├── gix-worktree-state 0.11.1
+│   │   └── gix 0.63.0
+│   ├── gix-diff 0.44.1
+│   │   └── gix 0.63.0
+│   └── gix 0.63.0
+├── gix-object 0.41.0
+│   ├── gix-worktree-state 0.7.0
+│   ├── gix-worktree 0.30.0
+│   ├── gix-traverse 0.37.0
+│   │   ├── gix-index 0.29.0
+│   │   │   ├── gix-worktree-state 0.7.0
+│   │   │   ├── gix-worktree 0.30.0
+│   │   │   └── gix 0.58.0
+│   │   └── gix 0.58.0
+│   ├── gix-revwalk 0.12.0
+│   │   ├── gix-traverse 0.37.0
+│   │   ├── gix-revision 0.26.0
+│   │   │   ├── gix-refspec 0.22.0
+│   │   │   │   ├── gix-submodule 0.8.0
+│   │   │   │   └── gix 0.58.0
+│   │   │   └── gix 0.58.0
+│   │   ├── gix-negotiate 0.12.0
+│   │   │   └── gix 0.58.0
+│   │   └── gix 0.58.0
+│   ├── gix-revision 0.26.0
+│   ├── gix-ref 0.41.0
+│   ├── gix-pack 0.47.0
+│   ├── gix-odb 0.57.0
+│   ├── gix-negotiate 0.12.0
+│   ├── gix-index 0.29.0
+│   ├── gix-filter 0.9.0
+│   │   ├── gix-worktree-state 0.7.0
+│   │   └── gix 0.58.0
+│   ├── gix-diff 0.40.0
+│   │   └── gix 0.58.0
+│   └── gix 0.58.0
+├── gix-index 0.33.1
+├── gix-index 0.29.0
+├── gix-glob 0.16.5
+│   ├── gix-worktree-state 0.11.1
+│   ├── gix-worktree-state 0.7.0
+│   ├── gix-worktree 0.34.1
+│   ├── gix-worktree 0.30.0
+│   ├── gix-pathspec 0.7.7
+│   │   ├── gix-submodule 0.11.0
+│   │   └── gix 0.63.0
+│   ├── gix-pathspec 0.6.0
+│   │   ├── gix-submodule 0.8.0
+│   │   └── gix 0.58.0
+│   ├── gix-ignore 0.11.4
+│   │   ├── gix-worktree 0.34.1
+│   │   ├── gix-worktree 0.30.0
+│   │   ├── gix 0.63.0
+│   │   └── gix 0.58.0
+│   ├── gix-config 0.37.0
+│   ├── gix-config 0.34.0
+│   ├── gix-attributes 0.22.5
+│   │   ├── gix-worktree 0.34.1
+│   │   ├── gix-worktree 0.30.0
+│   │   ├── gix-pathspec 0.7.7
+│   │   ├── gix-pathspec 0.6.0
+│   │   ├── gix-filter 0.11.3
+│   │   ├── gix-filter 0.9.0
+│   │   ├── gix 0.63.0
+│   │   └── gix 0.58.0
+│   ├── gix 0.63.0
+│   └── gix 0.58.0
+├── gix-fs 0.11.3
+│   ├── gix-worktree-state 0.11.1
+│   ├── gix-worktree 0.34.1
+│   ├── gix-tempfile 14.0.2
+│   │   ├── gix-ref 0.44.1
+│   │   ├── gix-pack 0.51.1
+│   │   ├── gix-lock 14.0.0
+│   │   │   ├── gix-ref 0.44.1
+│   │   │   ├── gix-index 0.33.1
+│   │   │   └── gix 0.63.0
+│   │   └── gix 0.63.0
+│   ├── gix-ref 0.44.1
+│   ├── gix-odb 0.61.1
+│   ├── gix-index 0.33.1
+│   ├── gix-discover 0.32.0
+│   └── gix 0.63.0
+├── gix-fs 0.10.2
+│   ├── gix-worktree-state 0.7.0
+│   ├── gix-worktree 0.30.0
+│   ├── gix-tempfile 13.1.1
+│   │   ├── gix-ref 0.41.0
+│   │   ├── gix-pack 0.47.0
+│   │   ├── gix-lock 13.1.1
+│   │   │   ├── gix-ref 0.41.0
+│   │   │   ├── gix-index 0.29.0
+│   │   │   └── gix 0.58.0
+│   │   └── gix 0.58.0
+│   ├── gix-ref 0.41.0
+│   ├── gix-odb 0.57.0
+│   ├── gix-index 0.29.0
+│   ├── gix-discover 0.29.0
+│   └── gix 0.58.0
+├── gix-config 0.37.0
+├── gix-config 0.34.0
+├── gix-commitgraph 0.24.3
+│   ├── gix-traverse 0.39.2
+│   ├── gix-traverse 0.37.0
+│   ├── gix-revwalk 0.13.2
+│   ├── gix-revwalk 0.12.0
+│   ├── gix-negotiate 0.13.2
+│   ├── gix-negotiate 0.12.0
+│   ├── gix 0.63.0
+│   └── gix 0.58.0
+├── gix 0.63.0
+└── gix 0.58.0
+
+Crate:     gix-fs
+Version:   0.10.2
+Title:     Traversal outside working tree enables arbitrary code execution
+Date:      2024-05-22
+ID:        RUSTSEC-2024-0350
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0350
+Severity:  8.8 (high)
+Solution:  Upgrade to >=0.11.0
+Dependency tree:
+gix-fs 0.10.2
+├── gix-worktree-state 0.7.0
+│   └── gix 0.58.0
+│       ├── tame-index 0.9.7
+│       │   └── rustsec 0.28.6
+│       │       └── cargo-audit 0.18.3
+│       │           └── mcp-server-meal-prep 1.0.0
+│       └── rustsec 0.28.6
+├── gix-worktree 0.30.0
+│   ├── gix-worktree-state 0.7.0
+│   └── gix 0.58.0
+├── gix-tempfile 13.1.1
+│   ├── gix-ref 0.41.0
+│   │   ├── gix-discover 0.29.0
+│   │   │   └── gix 0.58.0
+│   │   ├── gix-config 0.34.0
+│   │   │   ├── gix-submodule 0.8.0
+│   │   │   │   └── gix 0.58.0
+│   │   │   └── gix 0.58.0
+│   │   └── gix 0.58.0
+│   ├── gix-pack 0.47.0
+│   │   ├── gix-odb 0.57.0
+│   │   │   └── gix 0.58.0
+│   │   └── gix 0.58.0
+│   ├── gix-lock 13.1.1
+│   │   ├── gix-ref 0.41.0
+│   │   ├── gix-index 0.29.0
+│   │   │   ├── gix-worktree-state 0.7.0
+│   │   │   ├── gix-worktree 0.30.0
+│   │   │   └── gix 0.58.0
+│   │   └── gix 0.58.0
+│   └── gix 0.58.0
+├── gix-ref 0.41.0
+├── gix-odb 0.57.0
+├── gix-index 0.29.0
+├── gix-discover 0.29.0
+└── gix 0.58.0
+
+Crate:     gix-index
+Version:   0.29.0
+Title:     Traversal outside working tree enables arbitrary code execution
+Date:      2024-05-22
+ID:        RUSTSEC-2024-0348
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0348
+Severity:  8.8 (high)
+Solution:  Upgrade to >=0.33.0
+Dependency tree:
+gix-index 0.29.0
+├── gix-worktree-state 0.7.0
+│   └── gix 0.58.0
+│       ├── tame-index 0.9.7
+│       │   └── rustsec 0.28.6
+│       │       └── cargo-audit 0.18.3
+│       │           └── mcp-server-meal-prep 1.0.0
+│       └── rustsec 0.28.6
+├── gix-worktree 0.30.0
+│   ├── gix-worktree-state 0.7.0
+│   └── gix 0.58.0
+└── gix 0.58.0
+
+Crate:     gix-index
+Version:   0.29.0
+Title:     Refs and paths with reserved Windows device names access the devices
+Date:      2024-05-22
+ID:        RUSTSEC-2024-0352
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0352
+Severity:  5.4 (medium)
+Solution:  Upgrade to >=0.33.0
+
+Crate:     gix-ref
+Version:   0.41.0
+Title:     Refs and paths with reserved Windows device names access the devices
+Date:      2024-05-22
+ID:        RUSTSEC-2024-0351
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0351
+Severity:  5.4 (medium)
+Solution:  Upgrade to >=0.44.0
+Dependency tree:
+gix-ref 0.41.0
+├── gix-discover 0.29.0
+│   └── gix 0.58.0
+│       ├── tame-index 0.9.7
+│       │   └── rustsec 0.28.6
+│       │       └── cargo-audit 0.18.3
+│       │           └── mcp-server-meal-prep 1.0.0
+│       └── rustsec 0.28.6
+├── gix-config 0.34.0
+│   ├── gix-submodule 0.8.0
+│   │   └── gix 0.58.0
+│   └── gix 0.58.0
+└── gix 0.58.0
+
+Crate:     gix-transport
+Version:   0.41.2
+Title:     gix-transport indirect code execution via malicious username
+Date:      2024-04-13
+ID:        RUSTSEC-2024-0335
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0335
+Solution:  Upgrade to >=0.42.0
+Dependency tree:
+gix-transport 0.41.2
+├── gix-protocol 0.44.2
+│   └── gix 0.58.0
+│       ├── tame-index 0.9.7
+│       │   └── rustsec 0.28.6
+│       │       └── cargo-audit 0.18.3
+│       │           └── mcp-server-meal-prep 1.0.0
+│       └── rustsec 0.28.6
+└── gix 0.58.0
+
+Crate:     gix-worktree
+Version:   0.30.0
+Title:     Traversal outside working tree enables arbitrary code execution
+Date:      2024-05-22
+ID:        RUSTSEC-2024-0349
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0349
+Severity:  8.8 (high)
+Solution:  Upgrade to >=0.34.0
+Dependency tree:
+gix-worktree 0.30.0
+├── gix-worktree-state 0.7.0
+│   └── gix 0.58.0
+│       ├── tame-index 0.9.7
+│       │   └── rustsec 0.28.6
+│       │       └── cargo-audit 0.18.3
+│       │           └── mcp-server-meal-prep 1.0.0
+│       └── rustsec 0.28.6
+└── gix 0.58.0
+
+Crate:     gix-worktree
+Version:   0.30.0
+Title:     Refs and paths with reserved Windows device names access the devices
+Date:      2024-05-22
+ID:        RUSTSEC-2024-0353
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0353
+Severity:  5.4 (medium)
+Solution:  Upgrade to >=0.34.0
+
+Crate:     gix-worktree-state
+Version:   0.7.0
+Title:     gix-worktree-state nonexclusive checkout sets executable files world-writable
+Date:      2025-01-18
+ID:        RUSTSEC-2025-0001
+URL:       https://rustsec.org/advisories/RUSTSEC-2025-0001
+Severity:  5 (medium)
+Solution:  Upgrade to >=0.17.0
+Dependency tree:
+gix-worktree-state 0.7.0
+└── gix 0.58.0
+    ├── tame-index 0.9.7
+    │   └── rustsec 0.28.6
+    │       └── cargo-audit 0.18.3
+    │           └── mcp-server-meal-prep 1.0.0
+    └── rustsec 0.28.6
+
+Crate:     gix-worktree-state
+Version:   0.11.1
+Title:     gix-worktree-state nonexclusive checkout sets executable files world-writable
+Date:      2025-01-18
+ID:        RUSTSEC-2025-0001
+URL:       https://rustsec.org/advisories/RUSTSEC-2025-0001
+Severity:  5 (medium)
+Solution:  Upgrade to >=0.17.0
+Dependency tree:
+gix-worktree-state 0.11.1
+└── gix 0.63.0
+    ├── tame-index 0.12.2
+    │   └── cargo-deny 0.14.24
+    │       └── mcp-server-meal-prep 1.0.0
+    └── cargo-deny 0.14.24
+
+Crate:     adler
+Version:   1.0.2
+Warning:   unmaintained
+Title:     adler crate is unmaintained, use adler2 instead
+Date:      2025-09-05
+ID:        RUSTSEC-2025-0056
+URL:       https://rustsec.org/advisories/RUSTSEC-2025-0056
+Dependency tree:
+adler 1.0.2
+└── miniz_oxide 0.6.2
+    └── auditable-info 0.7.2
+        └── cargo-audit 0.18.3
+            └── mcp-server-meal-prep 1.0.0
+
+Crate:     atty
+Version:   0.2.14
+Warning:   unmaintained
+Title:     `atty` is unmaintained
+Date:      2024-09-25
+ID:        RUSTSEC-2024-0375
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0375
+Dependency tree:
+atty 0.2.14
+└── clap 3.2.25
+    ├── cargo-audit 0.18.3
+    │   └── mcp-server-meal-prep 1.0.0
+    └── abscissa_core 0.6.0
+        └── cargo-audit 0.18.3
+
+Crate:     paste
+Version:   1.0.15
+Warning:   unmaintained
+Title:     paste - no longer maintained
+Date:      2024-10-07
+ID:        RUSTSEC-2024-0436
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0436
+Dependency tree:
+paste 1.0.15
+├── rmp 0.8.14
+│   └── rmp-serde 0.14.4
+│       └── askalono 0.4.6
+│           └── cargo-deny 0.14.24
+│               └── mcp-server-meal-prep 1.0.0
+└── rmcp 0.2.1
+    └── mcp-server-meal-prep 1.0.0
+
+Crate:     proc-macro-error
+Version:   1.0.4
+Warning:   unmaintained
+Title:     proc-macro-error is unmaintained
+Date:      2024-09-01
+ID:        RUSTSEC-2024-0370
+URL:       https://rustsec.org/advisories/RUSTSEC-2024-0370
+Dependency tree:
+proc-macro-error 1.0.4
+└── clap_derive 3.2.25
+    └── clap 3.2.25
+        ├── cargo-audit 0.18.3
+        │   └── mcp-server-meal-prep 1.0.0
+        └── abscissa_core 0.6.0
+            └── cargo-audit 0.18.3
+
+Crate:     atty
+Version:   0.2.14
+Warning:   unsound
+Title:     Potential unaligned read
+Date:      2021-07-04
+ID:        RUSTSEC-2021-0145
+URL:       https://rustsec.org/advisories/RUSTSEC-2021-0145
+
+Crate:     rmp-serde
+Version:   0.14.4
+Warning:   unsound
+Title:     `rmp-serde` `Raw` and `RawRef` unsound
+Date:      2022-04-13
+ID:        RUSTSEC-2022-0092
+URL:       https://rustsec.org/advisories/RUSTSEC-2022-0092
+Dependency tree:
+rmp-serde 0.14.4
+└── askalono 0.4.6
+    └── cargo-deny 0.14.24
+        └── mcp-server-meal-prep 1.0.0
+
+error: 10 vulnerabilities found!
+warning: 6 allowed warnings found

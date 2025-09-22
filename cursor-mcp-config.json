@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "meal-prep": {
+      "command": "/Users/jwen/workspace/ml/MCP/mcp-server-meal-prep/target/release/mcp-server-meal-prep",
+      "args": [],
+      "env": {}
+    }
+  }
+}
