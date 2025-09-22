@@ -1,6 +1,6 @@
 # MCP Server - Meal Prep (Rust)
 
-[English](README.md) | [中文](README_CN.md)
+[English](README.md) | [简体中文](README_CN.md) | [繁體中文](README_TC.md)
 
 A high-performance MCP (Model Context Protocol) server built in Rust for meal preparation, featuring cuisine-based recipes and intelligent meal planning capabilities.
 

@@ -1,6 +1,6 @@
 # MCP 服务器 - 膳食准备 (Rust)
 
-[English](README.md) | [中文](README_CN.md)
+[English](README.md) | [简体中文](README_CN.md) | [繁體中文](README_TC.md)
 
 一个高性能的 MCP (模型上下文协议) 服务器，使用 Rust 构建，提供基于菜系的食谱和智能膳食规划功能。
 
