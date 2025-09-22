@@ -1,7 +1,7 @@
 Software Bill of Materials (SBOM) Summary
 =========================================
 
-Generated: 2025-09-22 04:35:10 UTC
+Generated: 2025-09-22 04:35:30 UTC
 Project: MCP Server - Meal Prep (Rust)
 Version: 1.0.0
 Author: Jin Wen <jin.wen@hisgarden.org>
